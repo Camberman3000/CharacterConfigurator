@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CharacterConfigurator
 {
@@ -44,5 +46,26 @@ namespace CharacterConfigurator
             //        break;
             //}
         }
+
+        private void buttonSaveConfig_Click(object sender, EventArgs e)
+        {
+            if (textBoxCharName.Text != "")// Has text?
+            {
+                StreamWriter sWriter = new StreamWriter(textBoxCharName.Text);// Init
+                string strPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);// Set save dir
+                strPath = strPath + "/Character Config.txt";// Set save file name
+
+                using (sWriter = File.AppendText(strPath)) sWriter.Write(textBoxCharName.Text + Environment.NewLine);// Write text to file
+                 
+                sWriter.Close();// Close writer
+                MessageBox.Show("Name saved!", "Success", MessageBoxButtons.OK);// Notify user
+            }
+            else
+            {
+                MessageBox.Show("Nothing to save. Please enter a character name.", "No data", MessageBoxButtons.OK);// Show error msg
+            }           
+        }
+
+       
     }
 }

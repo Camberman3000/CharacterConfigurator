@@ -3,7 +3,7 @@ Mark Montenieri
 MS539 - Fall 2022
 Final Project - Character Configurator sandbox
 Nov 13 estimate - 6 hours
-Actual time - 7:30AM - 
+Actual time - 1hr 45m
  
  
  */
