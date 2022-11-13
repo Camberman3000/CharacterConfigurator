@@ -2,9 +2,9 @@
 Mark Montenieri
 MS539 - Fall 2022
 Final Project - Character Configurator sandbox
-Nov 13 estimate - 6 hours
-Actual time - 1hr 45m
- 
+Estimate - 55 hours Total
+Nov 11 - 1hr 45m
+Nov 13
  
  */
 
@@ -24,6 +24,8 @@ namespace CharacterConfigurator
 {
     public partial class Form1 : Form
     {
+        private Configurator configuratorForm;// Declare configurator form
+
         public Form1()
         {
             InitializeComponent();
@@ -37,9 +39,17 @@ namespace CharacterConfigurator
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            Configurator configuratorForm = new Configurator();
-            configuratorForm.Show();
-            this.Hide();
+            if (configuratorForm != null)
+            {
+               // Don't create, it already exists
+            }
+            else
+            {
+                configuratorForm = new Configurator(this);// Create new configurator form
+            }
+           
+            configuratorForm.Show();// Show configurator form
+            this.Hide();// Hide this form
         }
 
         private void buttonOptions_Click(object sender, EventArgs e)

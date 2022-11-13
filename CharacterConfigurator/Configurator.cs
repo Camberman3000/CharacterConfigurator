@@ -14,8 +14,11 @@ namespace CharacterConfigurator
 {
     public partial class Configurator : Form
     {
-        public Configurator()
+        private Form1 form1;// Declare Form1        
+
+        public Configurator(Form1 form1)// Pass in Form1
         {
+            this.form1 = form1;// Assign form1 that was passed in to field var
             InitializeComponent();
         }
 
@@ -66,6 +69,15 @@ namespace CharacterConfigurator
             }           
         }
 
-       
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();// Hide this form
+            form1.Show(this);// Show form1
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();// Closes the app entirely
+        }
     }
 }
