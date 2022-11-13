@@ -4,11 +4,8 @@ MS539 - Fall 2022
 Final Project - Character Configurator sandbox
 Estimate - 55 hours Total
 Nov 11 - 1hr 45m
-Nov 13
- 
+Nov 13 - 3hr 
  */
-
-
 
 using System;
 using System.Collections.Generic;
