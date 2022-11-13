@@ -37,17 +37,17 @@
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRandStats = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.trackBarStrength = new System.Windows.Forms.TrackBar();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxStatStr = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxStatInt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxStatStam = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -158,17 +158,18 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Stats: 20 pts to spend";
             // 
-            // button1
+            // buttonRandStats
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(59, 421);
-            this.button1.Margin = new System.Windows.Forms.Padding(10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 75);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Randomize";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRandStats.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRandStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRandStats.Location = new System.Drawing.Point(59, 421);
+            this.buttonRandStats.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonRandStats.Name = "buttonRandStats";
+            this.buttonRandStats.Size = new System.Drawing.Size(183, 75);
+            this.buttonRandStats.TabIndex = 9;
+            this.buttonRandStats.Text = "Randomize";
+            this.buttonRandStats.UseVisualStyleBackColor = true;
+            this.buttonRandStats.Click += new System.EventHandler(this.buttonRandStats_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -180,7 +181,7 @@
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel2.Controls.Add(this.label7);
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel5);
-            this.flowLayoutPanel2.Controls.Add(this.button1);
+            this.flowLayoutPanel2.Controls.Add(this.buttonRandStats);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(393, 82);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -201,25 +202,25 @@
             this.flowLayoutPanel3.AutoSize = true;
             this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel3.Controls.Add(this.trackBarStrength);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.textBoxStatStr);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 87);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(295, 75);
             this.flowLayoutPanel3.TabIndex = 10;
             // 
-            // textBox1
+            // textBoxStatStr
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 26);
-            this.textBox1.TabIndex = 10;
+            this.textBoxStatStr.Location = new System.Drawing.Point(236, 3);
+            this.textBoxStatStr.Name = "textBoxStatStr";
+            this.textBoxStatStr.Size = new System.Drawing.Size(56, 26);
+            this.textBoxStatStr.TabIndex = 10;
             // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.AutoSize = true;
             this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel4.Controls.Add(this.trackBar1);
-            this.flowLayoutPanel4.Controls.Add(this.textBox2);
+            this.flowLayoutPanel4.Controls.Add(this.textBoxStatInt);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 210);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(295, 75);
@@ -234,19 +235,19 @@
             this.trackBar1.Size = new System.Drawing.Size(227, 69);
             this.trackBar1.TabIndex = 9;
             // 
-            // textBox2
+            // textBoxStatInt
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(56, 26);
-            this.textBox2.TabIndex = 10;
+            this.textBoxStatInt.Location = new System.Drawing.Point(236, 3);
+            this.textBoxStatInt.Name = "textBoxStatInt";
+            this.textBoxStatInt.Size = new System.Drawing.Size(56, 26);
+            this.textBoxStatInt.TabIndex = 10;
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.AutoSize = true;
             this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel5.Controls.Add(this.trackBar2);
-            this.flowLayoutPanel5.Controls.Add(this.textBox3);
+            this.flowLayoutPanel5.Controls.Add(this.textBoxStatStam);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 333);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(295, 75);
@@ -261,12 +262,12 @@
             this.trackBar2.Size = new System.Drawing.Size(227, 69);
             this.trackBar2.TabIndex = 9;
             // 
-            // textBox3
+            // textBoxStatStam
             // 
-            this.textBox3.Location = new System.Drawing.Point(236, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(56, 26);
-            this.textBox3.TabIndex = 10;
+            this.textBoxStatStam.Location = new System.Drawing.Point(236, 3);
+            this.textBoxStatStam.Name = "textBoxStatStam";
+            this.textBoxStatStam.Size = new System.Drawing.Size(56, 26);
+            this.textBoxStatStam.TabIndex = 10;
             // 
             // flowLayoutPanel6
             // 
@@ -359,20 +360,20 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRandStats;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TrackBar trackBarStrength;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxStatStr;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxStatInt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxStatStam;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
     }
 }
