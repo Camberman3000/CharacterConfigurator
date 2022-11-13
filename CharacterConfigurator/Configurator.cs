@@ -87,28 +87,55 @@ namespace CharacterConfigurator
             int randNum2 = GetRandNum(10, 20);
             int randNum3 = GetRandNum(10, 20);
 
-            int subTotal =  randNum1 + randNum2 + randNum3;
-            int overage = 0;
+            int subTotal =  randNum1 + randNum2 + randNum3;// Subtotal of all randomly generated numbers
+            int overage = 0;// Var
 
-            if (subTotal > 20)
+            if (subTotal > 20)// Random value total is over 20?
             {
                 overage = subTotal - 20;
             }
 
-            int trimAmt = overage / 3;
-            int remainder = overage % 3;
+            int trimAmt = overage / 3;// How much to trim from each random number
+            int remainder = overage % 3;// Remainder after division
 
+            /* Subtract trimAmt from each random number */
             randNum1 -= trimAmt;
             randNum2 -= trimAmt;
             randNum3 -= trimAmt;
-            
 
+            if (remainder > 0)// Could be between 0-2
+            {
+                int statToAdjust = GetRandNum(1, 3);// Get random number between 1 and 3
+
+                /* Trim random stat */
+                switch (statToAdjust)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        randNum1 = randNum1 -= remainder;
+                        break;
+                    case 2:
+                        randNum2 = randNum2 -= remainder;
+                        break;
+                    case 3:
+                        randNum3 = randNum3 -= remainder;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            /* Display random stat results */
+            textBoxStatStr.Text = randNum1.ToString();
+            textBoxStatInt.Text = randNum2.ToString();
+            textBoxStatStam.Text = randNum3.ToString();
         }
 
         private int GetRandNum(int r1, int r2)
         {
-            Random random = new Random();// Declare
-           int randNum = random.Next(10, 20);// Get rand in range
+            Random random = new Random(Guid.NewGuid().GetHashCode());// Declare
+           int randNum = random.Next(r1, r2);// Get rand in range
 
             return randNum;// Return int
         }       
