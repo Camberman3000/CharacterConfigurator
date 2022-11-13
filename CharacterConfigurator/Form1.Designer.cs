@@ -103,9 +103,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(181, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(643, 32);
+            this.label2.Size = new System.Drawing.Size(652, 32);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Welcome to the character configirator, etc, etc, etc";
+            this.label2.Text = "Welcome to the character configurator, etc, etc, etc";
             // 
             // Form1
             // 
