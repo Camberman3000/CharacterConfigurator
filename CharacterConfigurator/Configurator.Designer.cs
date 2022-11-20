@@ -39,27 +39,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonRandStats = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.trackBarStrength = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.trackBarStrength = new System.Windows.Forms.TrackBar();
             this.textBoxStatStr = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBarInt = new System.Windows.Forms.TrackBar();
             this.textBoxStatInt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackBarStam = new System.Windows.Forms.TrackBar();
             this.textBoxStatStam = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarStrength)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarStrength)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarInt)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarStam)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -188,14 +188,17 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(301, 506);
             this.flowLayoutPanel2.TabIndex = 7;
             // 
-            // trackBarStrength
+            // label5
             // 
-            this.trackBarStrength.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBarStrength.LargeChange = 1;
-            this.trackBarStrength.Location = new System.Drawing.Point(3, 3);
-            this.trackBarStrength.Name = "trackBarStrength";
-            this.trackBarStrength.Size = new System.Drawing.Size(227, 69);
-            this.trackBarStrength.TabIndex = 9;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(103, 50);
+            this.label5.Margin = new System.Windows.Forms.Padding(8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 26);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Strength";
             // 
             // flowLayoutPanel3
             // 
@@ -208,88 +211,23 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(295, 75);
             this.flowLayoutPanel3.TabIndex = 10;
             // 
+            // trackBarStrength
+            // 
+            this.trackBarStrength.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackBarStrength.LargeChange = 1;
+            this.trackBarStrength.Location = new System.Drawing.Point(3, 3);
+            this.trackBarStrength.Name = "trackBarStrength";
+            this.trackBarStrength.Size = new System.Drawing.Size(227, 69);
+            this.trackBarStrength.TabIndex = 9;
+            this.trackBarStrength.Scroll += new System.EventHandler(this.trackBarStrength_Scroll);
+            // 
             // textBoxStatStr
             // 
             this.textBoxStatStr.Location = new System.Drawing.Point(236, 3);
             this.textBoxStatStr.Name = "textBoxStatStr";
             this.textBoxStatStr.Size = new System.Drawing.Size(56, 26);
             this.textBoxStatStr.TabIndex = 10;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.AutoSize = true;
-            this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel4.Controls.Add(this.trackBar1);
-            this.flowLayoutPanel4.Controls.Add(this.textBoxStatInt);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 210);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(295, 75);
-            this.flowLayoutPanel4.TabIndex = 11;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(3, 3);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(227, 69);
-            this.trackBar1.TabIndex = 9;
-            // 
-            // textBoxStatInt
-            // 
-            this.textBoxStatInt.Location = new System.Drawing.Point(236, 3);
-            this.textBoxStatInt.Name = "textBoxStatInt";
-            this.textBoxStatInt.Size = new System.Drawing.Size(56, 26);
-            this.textBoxStatInt.TabIndex = 10;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.AutoSize = true;
-            this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel5.Controls.Add(this.trackBar2);
-            this.flowLayoutPanel5.Controls.Add(this.textBoxStatStam);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 333);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(295, 75);
-            this.flowLayoutPanel5.TabIndex = 11;
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar2.LargeChange = 1;
-            this.trackBar2.Location = new System.Drawing.Point(3, 3);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(227, 69);
-            this.trackBar2.TabIndex = 9;
-            // 
-            // textBoxStatStam
-            // 
-            this.textBoxStatStam.Location = new System.Drawing.Point(236, 3);
-            this.textBoxStatStam.Name = "textBoxStatStam";
-            this.textBoxStatStam.Size = new System.Drawing.Size(56, 26);
-            this.textBoxStatStam.TabIndex = 10;
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.AutoSize = true;
-            this.flowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(1314, 115);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel6.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(103, 50);
-            this.label5.Margin = new System.Windows.Forms.Padding(8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 26);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Strength";
+            this.textBoxStatStr.Text = "0";
             // 
             // label6
             // 
@@ -303,6 +241,35 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Intelligence";
             // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.AutoSize = true;
+            this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel4.Controls.Add(this.trackBarInt);
+            this.flowLayoutPanel4.Controls.Add(this.textBoxStatInt);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 210);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(295, 75);
+            this.flowLayoutPanel4.TabIndex = 11;
+            // 
+            // trackBarInt
+            // 
+            this.trackBarInt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackBarInt.LargeChange = 1;
+            this.trackBarInt.Location = new System.Drawing.Point(3, 3);
+            this.trackBarInt.Name = "trackBarInt";
+            this.trackBarInt.Size = new System.Drawing.Size(227, 69);
+            this.trackBarInt.TabIndex = 9;
+            this.trackBarInt.Scroll += new System.EventHandler(this.trackBarInt_Scroll);
+            // 
+            // textBoxStatInt
+            // 
+            this.textBoxStatInt.Location = new System.Drawing.Point(236, 3);
+            this.textBoxStatInt.Name = "textBoxStatInt";
+            this.textBoxStatInt.Size = new System.Drawing.Size(56, 26);
+            this.textBoxStatInt.TabIndex = 10;
+            this.textBoxStatInt.Text = "0";
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -314,6 +281,45 @@
             this.label7.Size = new System.Drawing.Size(93, 26);
             this.label7.TabIndex = 14;
             this.label7.Text = "Stamina";
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel5.Controls.Add(this.trackBarStam);
+            this.flowLayoutPanel5.Controls.Add(this.textBoxStatStam);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 333);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(295, 75);
+            this.flowLayoutPanel5.TabIndex = 11;
+            // 
+            // trackBarStam
+            // 
+            this.trackBarStam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackBarStam.LargeChange = 1;
+            this.trackBarStam.Location = new System.Drawing.Point(3, 3);
+            this.trackBarStam.Name = "trackBarStam";
+            this.trackBarStam.Size = new System.Drawing.Size(227, 69);
+            this.trackBarStam.TabIndex = 9;
+            this.trackBarStam.Scroll += new System.EventHandler(this.trackBarStam_Scroll);
+            // 
+            // textBoxStatStam
+            // 
+            this.textBoxStatStam.Location = new System.Drawing.Point(236, 3);
+            this.textBoxStatStam.Name = "textBoxStatStam";
+            this.textBoxStatStam.Size = new System.Drawing.Size(56, 26);
+            this.textBoxStatStam.TabIndex = 10;
+            this.textBoxStatStam.Text = "0";
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.AutoSize = true;
+            this.flowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(1314, 115);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel6.TabIndex = 12;
             // 
             // Configurator
             // 
@@ -335,15 +341,15 @@
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarStrength)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarStrength)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarInt)).EndInit();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarStam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,11 +374,11 @@
         private System.Windows.Forms.TextBox textBoxStatStr;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBarInt;
         private System.Windows.Forms.TextBox textBoxStatInt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar trackBarStam;
         private System.Windows.Forms.TextBox textBoxStatStam;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
     }

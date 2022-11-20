@@ -138,6 +138,21 @@ namespace CharacterConfigurator
            int randNum = random.Next(r1, r2);// Get rand in range
 
             return randNum;// Return int
-        }       
+        }
+
+        private void trackBarStrength_Scroll(object sender, EventArgs e)
+        {
+            textBoxStatStr.Text = trackBarStrength.Value.ToString(); 
+        }
+
+        private void trackBarInt_Scroll(object sender, EventArgs e)
+        {
+            textBoxStatInt.Text = trackBarInt.Value.ToString();
+        }
+
+        private void trackBarStam_Scroll(object sender, EventArgs e)
+        {
+            textBoxStatStam.Text = trackBarStam.Value.ToString();
+        }
     }
 }
