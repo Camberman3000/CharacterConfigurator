@@ -127,14 +127,39 @@ namespace CharacterConfigurator
             }
 
             /* Display random stat results */
-            textBoxStatStr.Text = randNum1.ToString();
-            trackBarStrength.Value = randNum1;
+            if (randNum1 > 10)
+            {
+                textBoxStatStr.Text = "10";
+                trackBarStrength.Value = 10;
+            }
+            else
+            {
+                textBoxStatStr.Text = randNum1.ToString();
+                trackBarStrength.Value = randNum1;
+            }
 
-            textBoxStatInt.Text = randNum2.ToString();
-            trackBarInt.Value = randNum2;
+            /* Catch out of range */
+            if (randNum2 > 10)
+            {
+                textBoxStatInt.Text = "10";
+                trackBarInt.Value = 10;
+            }
+            else
+            {
+                textBoxStatInt.Text = randNum2.ToString();
+                trackBarInt.Value = randNum2;
+            }
 
-            textBoxStatStam.Text = randNum3.ToString();
-            trackBarStam.Value = randNum3;
+            if (randNum3 > 10)
+            {
+                textBoxStatStam.Text = "10";
+                trackBarStam.Value = 10;
+            }
+            else
+            {
+                textBoxStatStam.Text = randNum3.ToString();
+                trackBarStam.Value = randNum3;
+            }               
         }
 
         private int GetRandNum(int r1, int r2)
