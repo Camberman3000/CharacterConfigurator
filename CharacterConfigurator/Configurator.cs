@@ -26,6 +26,23 @@ namespace CharacterConfigurator
         {
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);// Center form on screen 
+
+            /* Add text directly to combobox */
+            comboBoxHometown.Items.Add("Deep Glen");
+            comboBoxHometown.Items.Add("Rocky Nock");
+            comboBoxHometown.Items.Add("Hill Valley");
+
+            /* Add combobox text via array index */
+            string[] charClass = { "Mage", "Warrior", "Nun" };
+            comboBoxCharClass.Items.Add(charClass[0]);
+            comboBoxCharClass.Items.Add(charClass[1]);
+            comboBoxCharClass.Items.Add(charClass[2]);
+
+
+
+
+
+
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -35,13 +52,13 @@ namespace CharacterConfigurator
 
         private void buttonSaveConfig_Click(object sender, EventArgs e)
         {
-            if (textBoxCharName.Text != "")// Has text?
+            if (textBoxCharFirstName.Text != "")// Has text?
             {
-                StreamWriter sWriter = new StreamWriter(textBoxCharName.Text);// Init
+                StreamWriter sWriter = new StreamWriter(textBoxCharFirstName.Text);// Init
                 string strPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);// Set save dir
                 strPath = strPath + "/Character Config.txt";// Set save file name
 
-                using (sWriter = File.AppendText(strPath)) sWriter.Write(textBoxCharName.Text + Environment.NewLine);// Write text to file
+                using (sWriter = File.AppendText(strPath)) sWriter.Write(textBoxCharFirstName.Text + Environment.NewLine);// Write text to file
                  
                 sWriter.Close();// Close writer
                 MessageBox.Show("Name saved!", "Success", MessageBoxButtons.OK);// Notify user
@@ -111,8 +128,13 @@ namespace CharacterConfigurator
 
             /* Display random stat results */
             textBoxStatStr.Text = randNum1.ToString();
+            trackBarStrength.Value = randNum1;
+
             textBoxStatInt.Text = randNum2.ToString();
+            trackBarInt.Value = randNum2;
+
             textBoxStatStam.Text = randNum3.ToString();
+            trackBarStam.Value = randNum3;
         }
 
         private int GetRandNum(int r1, int r2)
@@ -234,6 +256,8 @@ namespace CharacterConfigurator
                         break;
                 }
             }
+
+            /* Populate textboxes and assign slider values */
             textBoxStatStr.Text = str.ToString();
             trackBarStrength.Value = str;
 
@@ -242,12 +266,32 @@ namespace CharacterConfigurator
 
             textBoxStatStam.Text = stam.ToString();
             trackBarStam.Value = stam; 
+        }
 
+        private void buttonRandomizeBio_Click(object sender, EventArgs e)
+        {
+            /* Name arrays */
+            string[] firstNameArr = { "Alexia", "Lauren ", "Esme " };
+            string[] lastNameArr = { "Beasley ", "Beard", "Sanford" };
 
+            string firstName;
+            string lastName;
+            
+            /* Get random number */
+            int r1 = GetRandNum(0, 2);
+            int r2 = GetRandNum(0, 2);
 
-        }      
+            /* Assign random number to array index */
+            firstName = firstNameArr[r1];
+            lastName = lastNameArr[r2]; 
 
+            /* Populate text */
+            string fullName = firstName + lastName;// Concat
+            textBoxSummaryCharName.Text = fullName;
 
-
+            /* Populate name in textboxes */
+            textBoxCharFirstName.Text = firstName;
+            textBoxCharLastName.Text = lastName;
+        }
     }
 }

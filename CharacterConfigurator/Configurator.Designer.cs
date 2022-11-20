@@ -32,8 +32,13 @@
             this.buttonSaveConfig = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCharName = new System.Windows.Forms.TextBox();
+            this.textBoxCharFirstName = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxHometown = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxCharClass = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,9 +54,14 @@
             this.textBoxStatInt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.trackBarStam = new System.Windows.Forms.TrackBar();
             this.textBoxStatStam = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.trackBarStam = new System.Windows.Forms.TrackBar();
+            this.textBoxCharLastName = new System.Windows.Forms.TextBox();
+            this.buttonRandomizeBio = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxSummaryCharName = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -95,32 +105,98 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(8);
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 26);
+            this.label3.Size = new System.Drawing.Size(220, 26);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Character Name";
+            this.label3.Text = "Character First Name";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxCharName
+            // textBoxCharFirstName
             // 
-            this.textBoxCharName.Location = new System.Drawing.Point(8, 50);
-            this.textBoxCharName.Margin = new System.Windows.Forms.Padding(8);
-            this.textBoxCharName.Name = "textBoxCharName";
-            this.textBoxCharName.Size = new System.Drawing.Size(177, 26);
-            this.textBoxCharName.TabIndex = 5;
+            this.textBoxCharFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxCharFirstName.Location = new System.Drawing.Point(3, 35);
+            this.textBoxCharFirstName.Name = "textBoxCharFirstName";
+            this.textBoxCharFirstName.Size = new System.Drawing.Size(220, 26);
+            this.textBoxCharFirstName.TabIndex = 5;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.textBoxCharName);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxCharFirstName);
+            this.flowLayoutPanel1.Controls.Add(this.label10);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxCharLastName);
+            this.flowLayoutPanel1.Controls.Add(this.label8);
+            this.flowLayoutPanel1.Controls.Add(this.comboBoxHometown);
+            this.flowLayoutPanel1.Controls.Add(this.label9);
+            this.flowLayoutPanel1.Controls.Add(this.comboBoxCharClass);
+            this.flowLayoutPanel1.Controls.Add(this.buttonRandomizeBio);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(162, 82);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(199, 174);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(226, 355);
             this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 131);
+            this.label8.Margin = new System.Windows.Forms.Padding(3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(220, 26);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Character Hometown";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxHometown
+            // 
+            this.comboBoxHometown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxHometown.FormattingEnabled = true;
+            this.comboBoxHometown.Location = new System.Drawing.Point(3, 163);
+            this.comboBoxHometown.Name = "comboBoxHometown";
+            this.comboBoxHometown.Size = new System.Drawing.Size(220, 28);
+            this.comboBoxHometown.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 197);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(220, 26);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Character Class";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxCharClass
+            // 
+            this.comboBoxCharClass.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxCharClass.FormattingEnabled = true;
+            this.comboBoxCharClass.Location = new System.Drawing.Point(3, 229);
+            this.comboBoxCharClass.Name = "comboBoxCharClass";
+            this.comboBoxCharClass.Size = new System.Drawing.Size(220, 28);
+            this.comboBoxCharClass.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 67);
+            this.label10.Margin = new System.Windows.Forms.Padding(3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(219, 26);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Character Last Name";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonBack
             // 
@@ -185,7 +261,7 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(393, 82);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(534, 506);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(301, 506);
             this.flowLayoutPanel2.TabIndex = 7;
             // 
             // label5
@@ -295,6 +371,16 @@
             this.flowLayoutPanel5.Size = new System.Drawing.Size(295, 75);
             this.flowLayoutPanel5.TabIndex = 11;
             // 
+            // trackBarStam
+            // 
+            this.trackBarStam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackBarStam.LargeChange = 1;
+            this.trackBarStam.Location = new System.Drawing.Point(3, 3);
+            this.trackBarStam.Name = "trackBarStam";
+            this.trackBarStam.Size = new System.Drawing.Size(227, 69);
+            this.trackBarStam.TabIndex = 9;
+            this.trackBarStam.Scroll += new System.EventHandler(this.trackBarStam_Scroll);
+            // 
             // textBoxStatStam
             // 
             this.textBoxStatStam.Location = new System.Drawing.Point(236, 3);
@@ -314,21 +400,64 @@
             this.flowLayoutPanel6.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel6.TabIndex = 12;
             // 
-            // trackBarStam
+            // textBoxCharLastName
             // 
-            this.trackBarStam.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBarStam.LargeChange = 1;
-            this.trackBarStam.Location = new System.Drawing.Point(3, 3);
-            this.trackBarStam.Name = "trackBarStam";
-            this.trackBarStam.Size = new System.Drawing.Size(227, 69);
-            this.trackBarStam.TabIndex = 9;
-            this.trackBarStam.Scroll += new System.EventHandler(this.trackBarStam_Scroll);
+            this.textBoxCharLastName.Location = new System.Drawing.Point(3, 99);
+            this.textBoxCharLastName.Name = "textBoxCharLastName";
+            this.textBoxCharLastName.Size = new System.Drawing.Size(220, 26);
+            this.textBoxCharLastName.TabIndex = 11;
+            // 
+            // buttonRandomizeBio
+            // 
+            this.buttonRandomizeBio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRandomizeBio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRandomizeBio.Location = new System.Drawing.Point(21, 270);
+            this.buttonRandomizeBio.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonRandomizeBio.Name = "buttonRandomizeBio";
+            this.buttonRandomizeBio.Size = new System.Drawing.Size(183, 75);
+            this.buttonRandomizeBio.TabIndex = 15;
+            this.buttonRandomizeBio.Text = "Randomize";
+            this.buttonRandomizeBio.UseVisualStyleBackColor = true;
+            this.buttonRandomizeBio.Click += new System.EventHandler(this.buttonRandomizeBio_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1219, 64);
+            this.label11.Margin = new System.Windows.Forms.Padding(3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 26);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Summary";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1219, 106);
+            this.label12.Margin = new System.Windows.Forms.Padding(3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 26);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Name";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxSummaryCharName
+            // 
+            this.textBoxSummaryCharName.Location = new System.Drawing.Point(1296, 106);
+            this.textBoxSummaryCharName.Name = "textBoxSummaryCharName";
+            this.textBoxSummaryCharName.Size = new System.Drawing.Size(235, 26);
+            this.textBoxSummaryCharName.TabIndex = 18;
             // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1778, 844);
+            this.Controls.Add(this.textBoxSummaryCharName);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.flowLayoutPanel6);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -337,6 +466,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonSaveConfig);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label11);
             this.Name = "Configurator";
             this.Text = "Configurator";
             this.Load += new System.EventHandler(this.Configurator_Load);
@@ -364,7 +494,7 @@
         private System.Windows.Forms.Button buttonSaveConfig;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCharName;
+        private System.Windows.Forms.TextBox textBoxCharFirstName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonExit;
@@ -384,5 +514,15 @@
         private System.Windows.Forms.TextBox textBoxStatStam;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.TrackBar trackBarStam;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBoxHometown;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBoxCharClass;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxCharLastName;
+        private System.Windows.Forms.Button buttonRandomizeBio;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxSummaryCharName;
     }
 }
