@@ -225,6 +225,7 @@
             // 
             this.textBoxStatStr.Location = new System.Drawing.Point(236, 3);
             this.textBoxStatStr.Name = "textBoxStatStr";
+            this.textBoxStatStr.ReadOnly = true;
             this.textBoxStatStr.Size = new System.Drawing.Size(56, 26);
             this.textBoxStatStr.TabIndex = 10;
             this.textBoxStatStr.Text = "0";
@@ -266,6 +267,7 @@
             // 
             this.textBoxStatInt.Location = new System.Drawing.Point(236, 3);
             this.textBoxStatInt.Name = "textBoxStatInt";
+            this.textBoxStatInt.ReadOnly = true;
             this.textBoxStatInt.Size = new System.Drawing.Size(56, 26);
             this.textBoxStatInt.TabIndex = 10;
             this.textBoxStatInt.Text = "0";
@@ -307,6 +309,7 @@
             // 
             this.textBoxStatStam.Location = new System.Drawing.Point(236, 3);
             this.textBoxStatStam.Name = "textBoxStatStam";
+            this.textBoxStatStam.ReadOnly = true;
             this.textBoxStatStam.Size = new System.Drawing.Size(56, 26);
             this.textBoxStatStam.TabIndex = 10;
             this.textBoxStatStam.Text = "0";

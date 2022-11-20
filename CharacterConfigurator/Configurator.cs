@@ -30,24 +30,7 @@ namespace CharacterConfigurator
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();// Closes the app entirely
-
-            /* This fires for every open form - not cool */
-            //base.OnFormClosing(e);
-
-            //if (e.CloseReason == CloseReason.WindowsShutDown) return;
-            //// Confirm user wants to close
-            //switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
-            //{
-            //    case DialogResult.No:
-            //        e.Cancel = true;
-            //        break;
-            //    case DialogResult.Yes:
-            //        System.Windows.Forms.Application.Exit(e);
-            //        break;
-            //    default:
-            //        break;
-            //}
+            System.Windows.Forms.Application.Exit();// Closes the app entirely            
         }
 
         private void buttonSaveConfig_Click(object sender, EventArgs e)
@@ -140,19 +123,96 @@ namespace CharacterConfigurator
             return randNum;// Return int
         }
 
+        int statStrNum = 0;
+        int statIntNum = 0;
+        int statStamNum = 0;
+
         private void trackBarStrength_Scroll(object sender, EventArgs e)
         {
-            textBoxStatStr.Text = trackBarStrength.Value.ToString(); 
+            textBoxStatStr.Text = trackBarStrength.Value.ToString();
+            int statStr = Int32.Parse(trackBarStrength.Value.ToString());
+
+            if (statStr > statStrNum)// Did value increase?
+            {
+                CheckOverage("Strength");
+            }
+           statStrNum = statStr;// Assign new value to var
         }
 
         private void trackBarInt_Scroll(object sender, EventArgs e)
         {
             textBoxStatInt.Text = trackBarInt.Value.ToString();
+            int statInt = Int32.Parse(trackBarInt.Value.ToString());
+
+            if (statInt > statIntNum)
+            {
+                CheckOverage("Intelligence");
+            }
+            statIntNum = statInt;// Assign new value to var
         }
 
         private void trackBarStam_Scroll(object sender, EventArgs e)
         {
             textBoxStatStam.Text = trackBarStam.Value.ToString();
+            int statStam = Int32.Parse(trackBarStam.Value.ToString());
+
+            if (statStam > statStamNum)
+            {
+                CheckOverage("Stamina");
+            }
+            statStamNum = statStam;// Assign new value to var
         }
+
+        private void CheckOverage(string stat)
+        {
+            int subTotal = 0;
+            int str = Int32.Parse(textBoxStatStr.Text);
+            int intel = Int32.Parse(textBoxStatInt.Text); 
+            int stam = Int32.Parse(textBoxStatStam.Text);
+            int overage = 0;
+
+            subTotal = str + intel + stam;
+
+            if (subTotal > 20)// Random value total is over 20?
+            {
+                overage = subTotal - 20;
+            }
+
+            int trimAmt = overage / 2;// How much to trim from each random number
+            int remainder = overage % 2;// Remainder after division
+
+            switch (stat)
+            {
+                case "Strength":
+                    intel -= trimAmt;// Trims overage / 2
+                    stam -= trimAmt + remainder;// Trims overage / 2 + any remainder
+                    break;
+                case "Intelligence":
+                    str -= trimAmt;// Trims overage / 2
+                    stam -= trimAmt + remainder;// Trims overage / 2 + any remainder
+                    break;
+                case "Stamina":
+                    str -= trimAmt;// Trims overage / 2
+                    intel -= trimAmt + remainder;// Trims overage / 2 + any remainder
+                    break;                 
+                default:
+                    break;
+            }
+
+            textBoxStatStr.Text = str.ToString();
+            trackBarStrength.Value = str;
+
+            textBoxStatInt.Text = intel.ToString();
+            trackBarInt.Value = intel;
+
+            textBoxStatStam.Text = stam.ToString();
+            trackBarStam.Value = str; 
+
+
+
+        }      
+
+
+
     }
 }
