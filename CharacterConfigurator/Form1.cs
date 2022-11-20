@@ -6,7 +6,7 @@ Estimate - 55 hours Total
 Nov 11 - 1hr 45m
 Nov 13 - 3hr 
 Nov 18 - 2hr
-Nov 20 - 4hr
+Nov 20 - 4.5hr
  */
 
 using System;

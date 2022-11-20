@@ -286,7 +286,7 @@ namespace CharacterConfigurator
             lastName = lastNameArr[r2]; 
 
             /* Populate text */
-            string fullName = firstName + lastName;// Concat
+            string fullName = firstName + " " + lastName;// Concat
             textBoxSummaryCharName.Text = fullName;
 
             /* Populate name in textboxes */
