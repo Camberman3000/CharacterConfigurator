@@ -163,7 +163,7 @@ namespace CharacterConfigurator
             statStamNum = statStam;// Assign new value to var
         }
 
-        private void CheckOverage(string stat)
+        private void CheckOverage(string stat)// Gets value over max of 20 points
         {
             int subTotal = 0;
             int str = Int32.Parse(textBoxStatStr.Text);
@@ -175,30 +175,65 @@ namespace CharacterConfigurator
 
             if (subTotal > 20)// Random value total is over 20?
             {
-                overage = subTotal - 20;
+                overage = subTotal - 20;           
+
+                int trimAmt = overage / 2;// How much to trim from each random number
+                int remainder = overage % 2;// Remainder after division
+
+                switch (stat)
+                {
+                    case "Strength":
+                        intel -= trimAmt;// Trims overage / 2
+                        stam -= trimAmt;// Trims overage / 2 
+                        if (remainder > 0)
+                        {
+                            int randNum = GetRandNum(0, 100);// Get random number
+                            if (randNum > 50)// Random num > 50?
+                            {
+                                intel -= remainder;// Set trimmed value
+                            }
+                            else
+                            {
+                                stam -= remainder;// Set trimmed value
+                            }                            
+                        }                   
+                        break;
+                    case "Intelligence":
+                        str -= trimAmt;// Trims overage / 2
+                        stam -= trimAmt;// Trims overage / 2 
+                        if (remainder > 0)// Random num > 50?
+                        {
+                            int randNum = GetRandNum(0, 100);// Get random number
+                            if (randNum > 50)
+                            {
+                                str -= remainder;// Set trimmed value
+                            }
+                            else
+                            {
+                                stam -= remainder;// Set trimmed value
+                            }                            
+                        }
+                        break;
+                    case "Stamina":
+                        str -= trimAmt;// Trims overage / 2
+                        intel -= trimAmt;// Trims overage / 2 
+                        if (remainder > 0)// Random num > 50?
+                        {
+                           int randNum = GetRandNum(0, 100);// Get random number
+                            if (randNum > 50)
+                            {
+                                str -= remainder;// Set trimmed value
+                            }
+                            else
+                            {
+                                intel -= remainder;// Set trimmed value
+                            }                            
+                        }
+                        break;                 
+                    default:
+                        break;
+                }
             }
-
-            int trimAmt = overage / 2;// How much to trim from each random number
-            int remainder = overage % 2;// Remainder after division
-
-            switch (stat)
-            {
-                case "Strength":
-                    intel -= trimAmt;// Trims overage / 2
-                    stam -= trimAmt + remainder;// Trims overage / 2 + any remainder
-                    break;
-                case "Intelligence":
-                    str -= trimAmt;// Trims overage / 2
-                    stam -= trimAmt + remainder;// Trims overage / 2 + any remainder
-                    break;
-                case "Stamina":
-                    str -= trimAmt;// Trims overage / 2
-                    intel -= trimAmt + remainder;// Trims overage / 2 + any remainder
-                    break;                 
-                default:
-                    break;
-            }
-
             textBoxStatStr.Text = str.ToString();
             trackBarStrength.Value = str;
 
@@ -206,7 +241,7 @@ namespace CharacterConfigurator
             trackBarInt.Value = intel;
 
             textBoxStatStam.Text = stam.ToString();
-            trackBarStam.Value = str; 
+            trackBarStam.Value = stam; 
 
 
 
