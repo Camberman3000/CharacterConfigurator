@@ -38,7 +38,7 @@ namespace CharacterConfigurator
             comboBoxCharClass.Items.Add(charClass[1]);
             comboBoxCharClass.Items.Add(charClass[2]);
 
-
+           
 
 
 
@@ -317,6 +317,21 @@ namespace CharacterConfigurator
             /* Populate name in textboxes */
             textBoxCharFirstName.Text = firstName;
             textBoxCharLastName.Text = lastName;
+        }
+
+        private void flp_Bio_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.flp_Bio.ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
+        }
+
+        private void flp_Stats_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.flp_Stats.ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
+        }
+
+        private void flp_Summary_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.flp_Summary.ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
         }
     }
 }

@@ -33,17 +33,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxCharFirstName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_Bio = new System.Windows.Forms.FlowLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxCharLastName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxHometown = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxCharClass = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.buttonRandomizeBio = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonRandStats = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_Stats = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.trackBarStrength = new System.Windows.Forms.TrackBar();
@@ -57,19 +59,21 @@
             this.trackBarStam = new System.Windows.Forms.TrackBar();
             this.textBoxStatStam = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBoxCharLastName = new System.Windows.Forms.TextBox();
-            this.buttonRandomizeBio = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxSummaryCharName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.flp_Summary = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_Name = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_Bio.SuspendLayout();
+            this.flp_Stats.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarStrength)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarInt)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarStam)).BeginInit();
+            this.flp_Summary.SuspendLayout();
+            this.flp_Name.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -105,8 +109,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
@@ -123,30 +129,56 @@
             this.textBoxCharFirstName.Size = new System.Drawing.Size(220, 26);
             this.textBoxCharFirstName.TabIndex = 5;
             // 
-            // flowLayoutPanel1
+            // flp_Bio
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.textBoxCharFirstName);
-            this.flowLayoutPanel1.Controls.Add(this.label10);
-            this.flowLayoutPanel1.Controls.Add(this.textBoxCharLastName);
-            this.flowLayoutPanel1.Controls.Add(this.label8);
-            this.flowLayoutPanel1.Controls.Add(this.comboBoxHometown);
-            this.flowLayoutPanel1.Controls.Add(this.label9);
-            this.flowLayoutPanel1.Controls.Add(this.comboBoxCharClass);
-            this.flowLayoutPanel1.Controls.Add(this.buttonRandomizeBio);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(162, 82);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(226, 355);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.flp_Bio.AutoSize = true;
+            this.flp_Bio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flp_Bio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_Bio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flp_Bio.Controls.Add(this.label3);
+            this.flp_Bio.Controls.Add(this.textBoxCharFirstName);
+            this.flp_Bio.Controls.Add(this.label10);
+            this.flp_Bio.Controls.Add(this.textBoxCharLastName);
+            this.flp_Bio.Controls.Add(this.label8);
+            this.flp_Bio.Controls.Add(this.comboBoxHometown);
+            this.flp_Bio.Controls.Add(this.label9);
+            this.flp_Bio.Controls.Add(this.comboBoxCharClass);
+            this.flp_Bio.Controls.Add(this.buttonRandomizeBio);
+            this.flp_Bio.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_Bio.Location = new System.Drawing.Point(150, 82);
+            this.flp_Bio.Name = "flp_Bio";
+            this.flp_Bio.Size = new System.Drawing.Size(230, 359);
+            this.flp_Bio.TabIndex = 6;
+            this.flp_Bio.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Bio_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(3, 67);
+            this.label10.Margin = new System.Windows.Forms.Padding(3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(219, 26);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Character Last Name";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxCharLastName
+            // 
+            this.textBoxCharLastName.Location = new System.Drawing.Point(3, 99);
+            this.textBoxCharLastName.Name = "textBoxCharLastName";
+            this.textBoxCharLastName.Size = new System.Drawing.Size(220, 26);
+            this.textBoxCharLastName.TabIndex = 11;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
             this.label8.Location = new System.Drawing.Point(3, 131);
             this.label8.Margin = new System.Windows.Forms.Padding(3);
             this.label8.Name = "label8";
@@ -167,8 +199,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
             this.label9.Location = new System.Drawing.Point(3, 197);
             this.label9.Margin = new System.Windows.Forms.Padding(3);
             this.label9.Name = "label9";
@@ -186,17 +220,18 @@
             this.comboBoxCharClass.Size = new System.Drawing.Size(220, 28);
             this.comboBoxCharClass.TabIndex = 9;
             // 
-            // label10
+            // buttonRandomizeBio
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 67);
-            this.label10.Margin = new System.Windows.Forms.Padding(3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(219, 26);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Character Last Name";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonRandomizeBio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRandomizeBio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRandomizeBio.Location = new System.Drawing.Point(21, 270);
+            this.buttonRandomizeBio.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonRandomizeBio.Name = "buttonRandomizeBio";
+            this.buttonRandomizeBio.Size = new System.Drawing.Size(183, 75);
+            this.buttonRandomizeBio.TabIndex = 15;
+            this.buttonRandomizeBio.Text = "Randomize";
+            this.buttonRandomizeBio.UseVisualStyleBackColor = true;
+            this.buttonRandomizeBio.Click += new System.EventHandler(this.buttonRandomizeBio_Click);
             // 
             // buttonBack
             // 
@@ -226,7 +261,9 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(39, 8);
             this.label4.Margin = new System.Windows.Forms.Padding(8);
             this.label4.Name = "label4";
@@ -247,28 +284,33 @@
             this.buttonRandStats.UseVisualStyleBackColor = true;
             this.buttonRandStats.Click += new System.EventHandler(this.buttonRandStats_Click);
             // 
-            // flowLayoutPanel2
+            // flp_Stats
             // 
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.Controls.Add(this.label4);
-            this.flowLayoutPanel2.Controls.Add(this.label5);
-            this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel2.Controls.Add(this.label6);
-            this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel4);
-            this.flowLayoutPanel2.Controls.Add(this.label7);
-            this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel5);
-            this.flowLayoutPanel2.Controls.Add(this.buttonRandStats);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(393, 82);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(301, 506);
-            this.flowLayoutPanel2.TabIndex = 7;
+            this.flp_Stats.AutoSize = true;
+            this.flp_Stats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_Stats.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flp_Stats.Controls.Add(this.label4);
+            this.flp_Stats.Controls.Add(this.label5);
+            this.flp_Stats.Controls.Add(this.flowLayoutPanel3);
+            this.flp_Stats.Controls.Add(this.label6);
+            this.flp_Stats.Controls.Add(this.flowLayoutPanel4);
+            this.flp_Stats.Controls.Add(this.label7);
+            this.flp_Stats.Controls.Add(this.flowLayoutPanel5);
+            this.flp_Stats.Controls.Add(this.buttonRandStats);
+            this.flp_Stats.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_Stats.Location = new System.Drawing.Point(393, 82);
+            this.flp_Stats.Name = "flp_Stats";
+            this.flp_Stats.Size = new System.Drawing.Size(305, 510);
+            this.flp_Stats.TabIndex = 7;
+            this.flp_Stats.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Stats_Paint);
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(103, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(8);
             this.label5.Name = "label5";
@@ -280,6 +322,7 @@
             // 
             this.flowLayoutPanel3.AutoSize = true;
             this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel3.Controls.Add(this.trackBarStrength);
             this.flowLayoutPanel3.Controls.Add(this.textBoxStatStr);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 87);
@@ -289,6 +332,7 @@
             // 
             // trackBarStrength
             // 
+            this.trackBarStrength.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.trackBarStrength.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBarStrength.LargeChange = 1;
             this.trackBarStrength.Location = new System.Drawing.Point(3, 3);
@@ -310,7 +354,9 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(89, 173);
             this.label6.Margin = new System.Windows.Forms.Padding(8);
             this.label6.Name = "label6";
@@ -322,6 +368,7 @@
             // 
             this.flowLayoutPanel4.AutoSize = true;
             this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel4.Controls.Add(this.trackBarInt);
             this.flowLayoutPanel4.Controls.Add(this.textBoxStatInt);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 210);
@@ -331,6 +378,7 @@
             // 
             // trackBarInt
             // 
+            this.trackBarInt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.trackBarInt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBarInt.LargeChange = 1;
             this.trackBarInt.Location = new System.Drawing.Point(3, 3);
@@ -352,7 +400,9 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
             this.label7.Location = new System.Drawing.Point(104, 296);
             this.label7.Margin = new System.Windows.Forms.Padding(8);
             this.label7.Name = "label7";
@@ -364,6 +414,7 @@
             // 
             this.flowLayoutPanel5.AutoSize = true;
             this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel5.Controls.Add(this.trackBarStam);
             this.flowLayoutPanel5.Controls.Add(this.textBoxStatStam);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 333);
@@ -373,6 +424,7 @@
             // 
             // trackBarStam
             // 
+            this.trackBarStam.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.trackBarStam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBarStam.LargeChange = 1;
             this.trackBarStam.Location = new System.Drawing.Point(3, 3);
@@ -400,34 +452,16 @@
             this.flowLayoutPanel6.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel6.TabIndex = 12;
             // 
-            // textBoxCharLastName
-            // 
-            this.textBoxCharLastName.Location = new System.Drawing.Point(3, 99);
-            this.textBoxCharLastName.Name = "textBoxCharLastName";
-            this.textBoxCharLastName.Size = new System.Drawing.Size(220, 26);
-            this.textBoxCharLastName.TabIndex = 11;
-            // 
-            // buttonRandomizeBio
-            // 
-            this.buttonRandomizeBio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonRandomizeBio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRandomizeBio.Location = new System.Drawing.Point(21, 270);
-            this.buttonRandomizeBio.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonRandomizeBio.Name = "buttonRandomizeBio";
-            this.buttonRandomizeBio.Size = new System.Drawing.Size(183, 75);
-            this.buttonRandomizeBio.TabIndex = 15;
-            this.buttonRandomizeBio.Text = "Randomize";
-            this.buttonRandomizeBio.UseVisualStyleBackColor = true;
-            this.buttonRandomizeBio.Click += new System.EventHandler(this.buttonRandomizeBio_Click);
-            // 
             // label11
             // 
-            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label11.Dock = System.Windows.Forms.DockStyle.Right;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1219, 64);
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(3, 3);
             this.label11.Margin = new System.Windows.Forms.Padding(3);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 26);
+            this.label11.Size = new System.Drawing.Size(449, 26);
             this.label11.TabIndex = 16;
             this.label11.Text = "Summary";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -436,7 +470,8 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1219, 106);
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(3, 3);
             this.label12.Margin = new System.Windows.Forms.Padding(3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 26);
@@ -446,34 +481,60 @@
             // 
             // textBoxSummaryCharName
             // 
-            this.textBoxSummaryCharName.Location = new System.Drawing.Point(1296, 106);
+            this.textBoxSummaryCharName.Location = new System.Drawing.Point(80, 3);
             this.textBoxSummaryCharName.Name = "textBoxSummaryCharName";
             this.textBoxSummaryCharName.Size = new System.Drawing.Size(235, 26);
             this.textBoxSummaryCharName.TabIndex = 18;
+            // 
+            // flp_Summary
+            // 
+            this.flp_Summary.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flp_Summary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_Summary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flp_Summary.Controls.Add(this.label11);
+            this.flp_Summary.Controls.Add(this.flp_Name);
+            this.flp_Summary.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_Summary.Location = new System.Drawing.Point(1193, 82);
+            this.flp_Summary.Name = "flp_Summary";
+            this.flp_Summary.Size = new System.Drawing.Size(454, 416);
+            this.flp_Summary.TabIndex = 19;
+            this.flp_Summary.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Summary_Paint);
+            // 
+            // flp_Name
+            // 
+            this.flp_Name.AutoSize = true;
+            this.flp_Name.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flp_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_Name.Controls.Add(this.label12);
+            this.flp_Name.Controls.Add(this.textBoxSummaryCharName);
+            this.flp_Name.Location = new System.Drawing.Point(3, 35);
+            this.flp_Name.Name = "flp_Name";
+            this.flp_Name.Size = new System.Drawing.Size(318, 32);
+            this.flp_Name.TabIndex = 17;
             // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CharacterConfigurator.Properties.Resources._1141048;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1778, 844);
-            this.Controls.Add(this.textBoxSummaryCharName);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.flp_Summary);
             this.Controls.Add(this.flowLayoutPanel6);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flp_Stats);
             this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flp_Bio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonSaveConfig);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label11);
             this.Name = "Configurator";
             this.Text = "Configurator";
             this.Load += new System.EventHandler(this.Configurator_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
+            this.flp_Bio.ResumeLayout(false);
+            this.flp_Bio.PerformLayout();
+            this.flp_Stats.ResumeLayout(false);
+            this.flp_Stats.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarStrength)).EndInit();
@@ -483,6 +544,10 @@
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarStam)).EndInit();
+            this.flp_Summary.ResumeLayout(false);
+            this.flp_Summary.PerformLayout();
+            this.flp_Name.ResumeLayout(false);
+            this.flp_Name.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,12 +560,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxCharFirstName;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flp_Bio;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonRandStats;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flp_Stats;
         private System.Windows.Forms.TrackBar trackBarStrength;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
@@ -524,5 +589,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxSummaryCharName;
+        private System.Windows.Forms.FlowLayoutPanel flp_Summary;
+        private System.Windows.Forms.FlowLayoutPanel flp_Name;
     }
 }
