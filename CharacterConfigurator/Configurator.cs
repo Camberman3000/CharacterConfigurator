@@ -31,12 +31,18 @@ namespace CharacterConfigurator
             comboBoxHometown.Items.Add("Deep Glen");
             comboBoxHometown.Items.Add("Rocky Nock");
             comboBoxHometown.Items.Add("Hill Valley");
+            comboBoxHometown.Items.Add("Black Bend");
+            comboBoxHometown.Items.Add("Party City");
+            comboBoxHometown.Items.Add("Dooferville");
 
             /* Add combobox text via array index */
-            string[] charClass = { "Mage", "Warrior", "Nun" };
+            string[] charClass = { "Mage", "Warrior", "Nun", "Ranger", "Barbarian", "Cleric" };
             comboBoxCharClass.Items.Add(charClass[0]);
             comboBoxCharClass.Items.Add(charClass[1]);
             comboBoxCharClass.Items.Add(charClass[2]);
+            comboBoxCharClass.Items.Add(charClass[3]);
+            comboBoxCharClass.Items.Add(charClass[4]);
+            comboBoxCharClass.Items.Add(charClass[5]);
 
            
 
@@ -296,15 +302,15 @@ namespace CharacterConfigurator
         private void buttonRandomizeBio_Click(object sender, EventArgs e)
         {
             /* Name arrays */
-            string[] firstNameArr = { "Alexia", "Lauren ", "Esme " };
-            string[] lastNameArr = { "Beasley ", "Beard", "Sanford" };
+            string[] firstNameArr = { "Alexia", "Lauren ", "Esme ", "Saylah ", "Oran ", "Mahle ", "Wiseco ", "Milodon " };
+            string[] lastNameArr = { "Beasley ", "Beard", "Sanford", "Tang", "Slade", "Baker", "Smith" };
 
             string firstName;
             string lastName;
             
             /* Get random number */
-            int r1 = GetRandNum(0, 2);
-            int r2 = GetRandNum(0, 2);
+            int r1 = GetRandNum(0, firstNameArr.Length);
+            int r2 = GetRandNum(0, lastNameArr.Length);
 
             /* Assign random number to array index */
             firstName = firstNameArr[r1];
@@ -317,6 +323,14 @@ namespace CharacterConfigurator
             /* Populate name in textboxes */
             textBoxCharFirstName.Text = firstName;
             textBoxCharLastName.Text = lastName;
+
+            int r3 = GetRandNum(0, comboBoxHometown.Items.Count - 1);
+            comboBoxHometown.SelectedIndex = r3;
+            textBoxHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
+
+            int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
+            comboBoxCharClass.SelectedIndex = r4;
+            textBoxCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
         }
 
         private void flp_Bio_Paint(object sender, PaintEventArgs e)

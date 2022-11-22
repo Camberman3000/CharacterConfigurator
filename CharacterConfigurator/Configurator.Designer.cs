@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configurator));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSaveConfig = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +65,15 @@
             this.textBoxSummaryCharName = new System.Windows.Forms.TextBox();
             this.flp_Summary = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_Name = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxHomeTown = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxCharClass = new System.Windows.Forms.TextBox();
             this.flp_Bio.SuspendLayout();
             this.flp_Stats.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -74,27 +84,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarStam)).BeginInit();
             this.flp_Summary.SuspendLayout();
             this.flp_Name.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 9);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(7, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 20);
+            this.label1.Size = new System.Drawing.Size(748, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose from the available options to create your character";
             // 
             // buttonSaveConfig
             // 
+            this.buttonSaveConfig.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonSaveConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveConfig.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSaveConfig.Location = new System.Drawing.Point(796, 750);
             this.buttonSaveConfig.Margin = new System.Windows.Forms.Padding(10);
             this.buttonSaveConfig.Name = "buttonSaveConfig";
             this.buttonSaveConfig.Size = new System.Drawing.Size(183, 75);
             this.buttonSaveConfig.TabIndex = 2;
             this.buttonSaveConfig.Text = "Save config";
-            this.buttonSaveConfig.UseVisualStyleBackColor = true;
+            this.buttonSaveConfig.UseVisualStyleBackColor = false;
             this.buttonSaveConfig.Click += new System.EventHandler(this.buttonSaveConfig_Click);
             // 
             // label2
@@ -223,38 +242,44 @@
             // buttonRandomizeBio
             // 
             this.buttonRandomizeBio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRandomizeBio.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonRandomizeBio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRandomizeBio.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonRandomizeBio.Location = new System.Drawing.Point(21, 270);
             this.buttonRandomizeBio.Margin = new System.Windows.Forms.Padding(10);
             this.buttonRandomizeBio.Name = "buttonRandomizeBio";
             this.buttonRandomizeBio.Size = new System.Drawing.Size(183, 75);
             this.buttonRandomizeBio.TabIndex = 15;
             this.buttonRandomizeBio.Text = "Randomize";
-            this.buttonRandomizeBio.UseVisualStyleBackColor = true;
+            this.buttonRandomizeBio.UseVisualStyleBackColor = false;
             this.buttonRandomizeBio.Click += new System.EventHandler(this.buttonRandomizeBio_Click);
             // 
             // buttonBack
             // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonBack.Location = new System.Drawing.Point(19, 750);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(10);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(183, 75);
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonExit
             // 
+            this.buttonExit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonExit.Location = new System.Drawing.Point(1565, 750);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(10);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(183, 75);
             this.buttonExit.TabIndex = 8;
             this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // label4
@@ -274,14 +299,16 @@
             // buttonRandStats
             // 
             this.buttonRandStats.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRandStats.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonRandStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRandStats.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonRandStats.Location = new System.Drawing.Point(59, 421);
             this.buttonRandStats.Margin = new System.Windows.Forms.Padding(10);
             this.buttonRandStats.Name = "buttonRandStats";
             this.buttonRandStats.Size = new System.Drawing.Size(183, 75);
             this.buttonRandStats.TabIndex = 9;
             this.buttonRandStats.Text = "Randomize";
-            this.buttonRandStats.UseVisualStyleBackColor = true;
+            this.buttonRandStats.UseVisualStyleBackColor = false;
             this.buttonRandStats.Click += new System.EventHandler(this.buttonRandStats_Click);
             // 
             // flp_Stats
@@ -483,6 +510,7 @@
             // 
             this.textBoxSummaryCharName.Location = new System.Drawing.Point(80, 3);
             this.textBoxSummaryCharName.Name = "textBoxSummaryCharName";
+            this.textBoxSummaryCharName.ReadOnly = true;
             this.textBoxSummaryCharName.Size = new System.Drawing.Size(235, 26);
             this.textBoxSummaryCharName.TabIndex = 18;
             // 
@@ -493,6 +521,8 @@
             this.flp_Summary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flp_Summary.Controls.Add(this.label11);
             this.flp_Summary.Controls.Add(this.flp_Name);
+            this.flp_Summary.Controls.Add(this.flowLayoutPanel7);
+            this.flp_Summary.Controls.Add(this.flowLayoutPanel8);
             this.flp_Summary.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_Summary.Location = new System.Drawing.Point(1193, 82);
             this.flp_Summary.Name = "flp_Summary";
@@ -512,13 +542,113 @@
             this.flp_Name.Size = new System.Drawing.Size(318, 32);
             this.flp_Name.TabIndex = 17;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(86, 16);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(762, 46);
+            this.flowLayoutPanel1.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(160, 320);
+            this.button1.Margin = new System.Windows.Forms.Padding(10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 75);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Randomize";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonRandomizeBio_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(778, 491);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel2.TabIndex = 21;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.AutoSize = true;
+            this.flowLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel7.Controls.Add(this.label13);
+            this.flowLayoutPanel7.Controls.Add(this.textBoxHomeTown);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 73);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(364, 32);
+            this.flowLayoutPanel7.TabIndex = 22;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(3, 3);
+            this.label13.Margin = new System.Windows.Forms.Padding(3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(117, 26);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Hometown";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxHomeTown
+            // 
+            this.textBoxHomeTown.Location = new System.Drawing.Point(126, 3);
+            this.textBoxHomeTown.Name = "textBoxHomeTown";
+            this.textBoxHomeTown.ReadOnly = true;
+            this.textBoxHomeTown.Size = new System.Drawing.Size(235, 26);
+            this.textBoxHomeTown.TabIndex = 19;
+            // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel8.Controls.Add(this.label14);
+            this.flowLayoutPanel8.Controls.Add(this.textBoxCharClass);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 111);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(430, 89);
+            this.flowLayoutPanel8.TabIndex = 23;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Control;
+            this.label14.Location = new System.Drawing.Point(3, 3);
+            this.label14.Margin = new System.Windows.Forms.Padding(3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(168, 26);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Character Class";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxCharClass
+            // 
+            this.textBoxCharClass.Location = new System.Drawing.Point(177, 3);
+            this.textBoxCharClass.Name = "textBoxCharClass";
+            this.textBoxCharClass.ReadOnly = true;
+            this.textBoxCharClass.Size = new System.Drawing.Size(235, 26);
+            this.textBoxCharClass.TabIndex = 19;
+            // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CharacterConfigurator.Properties.Resources._1141048;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1778, 844);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flp_Summary);
             this.Controls.Add(this.flowLayoutPanel6);
             this.Controls.Add(this.buttonExit);
@@ -526,8 +656,8 @@
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.flp_Bio);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSaveConfig);
-            this.Controls.Add(this.label1);
             this.Name = "Configurator";
             this.Text = "Configurator";
             this.Load += new System.EventHandler(this.Configurator_Load);
@@ -548,6 +678,12 @@
             this.flp_Summary.PerformLayout();
             this.flp_Name.ResumeLayout(false);
             this.flp_Name.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,5 +727,14 @@
         private System.Windows.Forms.TextBox textBoxSummaryCharName;
         private System.Windows.Forms.FlowLayoutPanel flp_Summary;
         private System.Windows.Forms.FlowLayoutPanel flp_Name;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxHomeTown;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxCharClass;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
