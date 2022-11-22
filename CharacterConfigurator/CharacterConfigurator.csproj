@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseCharacter.cs" />
+    <Compile Include="Character_Creature.cs" />
+    <Compile Include="Character_Humanoid.cs" />
     <Compile Include="Configurator.cs">
       <SubType>Form</SubType>
     </Compile>

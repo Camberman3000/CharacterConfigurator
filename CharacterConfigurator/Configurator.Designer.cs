@@ -74,6 +74,10 @@
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxCharClass = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_Humanoid = new System.Windows.Forms.RadioButton();
+            this.rb_Creature = new System.Windows.Forms.RadioButton();
             this.flp_Bio.SuspendLayout();
             this.flp_Stats.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -87,6 +91,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -150,7 +155,6 @@
             // 
             // flp_Bio
             // 
-            this.flp_Bio.AutoSize = true;
             this.flp_Bio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flp_Bio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flp_Bio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -162,11 +166,13 @@
             this.flp_Bio.Controls.Add(this.comboBoxHometown);
             this.flp_Bio.Controls.Add(this.label9);
             this.flp_Bio.Controls.Add(this.comboBoxCharClass);
+            this.flp_Bio.Controls.Add(this.label15);
+            this.flp_Bio.Controls.Add(this.groupBox1);
             this.flp_Bio.Controls.Add(this.buttonRandomizeBio);
             this.flp_Bio.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_Bio.Location = new System.Drawing.Point(150, 82);
             this.flp_Bio.Name = "flp_Bio";
-            this.flp_Bio.Size = new System.Drawing.Size(230, 359);
+            this.flp_Bio.Size = new System.Drawing.Size(230, 546);
             this.flp_Bio.TabIndex = 6;
             this.flp_Bio.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Bio_Paint);
             // 
@@ -245,7 +251,7 @@
             this.buttonRandomizeBio.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonRandomizeBio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRandomizeBio.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonRandomizeBio.Location = new System.Drawing.Point(21, 270);
+            this.buttonRandomizeBio.Location = new System.Drawing.Point(21, 408);
             this.buttonRandomizeBio.Margin = new System.Windows.Forms.Padding(10);
             this.buttonRandomizeBio.Name = "buttonRandomizeBio";
             this.buttonRandomizeBio.Size = new System.Drawing.Size(183, 75);
@@ -289,12 +295,12 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(39, 8);
+            this.label4.Location = new System.Drawing.Point(25, 8);
             this.label4.Margin = new System.Windows.Forms.Padding(8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 26);
+            this.label4.Size = new System.Drawing.Size(251, 26);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Stats: 20 pts to spend";
+            this.label4.Text = "Stats: 20 points to spend";
             // 
             // buttonRandStats
             // 
@@ -570,7 +576,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(778, 491);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1231, 630);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel2.TabIndex = 21;
@@ -640,6 +646,57 @@
             this.textBoxCharClass.Size = new System.Drawing.Size(235, 26);
             this.textBoxCharClass.TabIndex = 19;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.Control;
+            this.label15.Location = new System.Drawing.Point(3, 263);
+            this.label15.Margin = new System.Windows.Forms.Padding(3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(220, 26);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "*Character Race";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rb_Creature);
+            this.groupBox1.Controls.Add(this.rb_Humanoid);
+            this.groupBox1.Location = new System.Drawing.Point(3, 295);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            // 
+            // rb_Humanoid
+            // 
+            this.rb_Humanoid.AutoSize = true;
+            this.rb_Humanoid.ForeColor = System.Drawing.SystemColors.Control;
+            this.rb_Humanoid.Location = new System.Drawing.Point(18, 25);
+            this.rb_Humanoid.Name = "rb_Humanoid";
+            this.rb_Humanoid.Size = new System.Drawing.Size(107, 24);
+            this.rb_Humanoid.TabIndex = 0;
+            this.rb_Humanoid.TabStop = true;
+            this.rb_Humanoid.Text = "Humanoid";
+            this.rb_Humanoid.UseVisualStyleBackColor = true;
+            this.rb_Humanoid.CheckedChanged += new System.EventHandler(this.rb_Humanoid_CheckedChanged);
+            // 
+            // rb_Creature
+            // 
+            this.rb_Creature.AutoSize = true;
+            this.rb_Creature.ForeColor = System.Drawing.SystemColors.Control;
+            this.rb_Creature.Location = new System.Drawing.Point(18, 55);
+            this.rb_Creature.Name = "rb_Creature";
+            this.rb_Creature.Size = new System.Drawing.Size(96, 24);
+            this.rb_Creature.TabIndex = 1;
+            this.rb_Creature.TabStop = true;
+            this.rb_Creature.Text = "Creature";
+            this.rb_Creature.UseVisualStyleBackColor = true;
+            this.rb_Creature.CheckedChanged += new System.EventHandler(this.rb_Creature_CheckedChanged);
+            // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -684,6 +741,8 @@
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,5 +795,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxCharClass;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rb_Creature;
+        private System.Windows.Forms.RadioButton rb_Humanoid;
     }
 }

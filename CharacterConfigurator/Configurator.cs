@@ -44,11 +44,6 @@ namespace CharacterConfigurator
             comboBoxCharClass.Items.Add(charClass[4]);
             comboBoxCharClass.Items.Add(charClass[5]);
 
-           
-
-
-
-
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -346,6 +341,16 @@ namespace CharacterConfigurator
         private void flp_Summary_Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, this.flp_Summary.ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
+        }
+
+        private void rb_Humanoid_CheckedChanged(object sender, EventArgs e)
+        {
+            // Create msgbox popup to warn player that changing this will also reset any race-specific selections
+        }
+
+        private void rb_Creature_CheckedChanged(object sender, EventArgs e)
+        {
+            // Create msgbox popup to warn player that changing this will also reset any race-specific selections
         }
     }
 }
