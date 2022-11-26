@@ -8,6 +8,6 @@ namespace CharacterConfigurator
 {
     internal class Character_Humanoid : BaseCharacter // Inherits from BaseCharacter
     {
-       // Armor types go here
+        // Armor and Weapon types go here. This data will be used to populate combobox lists of available armor & weapons
     }
 }

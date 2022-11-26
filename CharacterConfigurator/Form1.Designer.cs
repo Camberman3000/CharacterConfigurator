@@ -45,10 +45,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
+            this.label1.Location = new System.Drawing.Point(7, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 37);
+            this.label1.Size = new System.Drawing.Size(128, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Main Menu";
             // 
@@ -61,9 +61,10 @@
             this.flowLayoutPanel1.Controls.Add(this.buttonOptions);
             this.flowLayoutPanel1.Controls.Add(this.buttonExit);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(395, 225);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(263, 146);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 350);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(142, 227);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // buttonStart
@@ -71,10 +72,10 @@
             this.buttonStart.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonStart.Location = new System.Drawing.Point(10, 67);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonStart.Location = new System.Drawing.Point(7, 44);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(183, 75);
+            this.buttonStart.Size = new System.Drawing.Size(122, 49);
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = false;
@@ -85,10 +86,10 @@
             this.buttonOptions.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOptions.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonOptions.Location = new System.Drawing.Point(10, 162);
-            this.buttonOptions.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonOptions.Location = new System.Drawing.Point(7, 105);
+            this.buttonOptions.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonOptions.Name = "buttonOptions";
-            this.buttonOptions.Size = new System.Drawing.Size(183, 75);
+            this.buttonOptions.Size = new System.Drawing.Size(122, 49);
             this.buttonOptions.TabIndex = 2;
             this.buttonOptions.Text = "Options";
             this.buttonOptions.UseVisualStyleBackColor = false;
@@ -99,10 +100,10 @@
             this.buttonExit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonExit.Location = new System.Drawing.Point(10, 257);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonExit.Location = new System.Drawing.Point(7, 166);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(183, 75);
+            this.buttonExit.Size = new System.Drawing.Size(122, 49);
             this.buttonExit.TabIndex = 3;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -114,12 +115,12 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(7, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(7);
+            this.label2.Location = new System.Drawing.Point(5, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(756, 32);
+            this.label2.Size = new System.Drawing.Size(544, 24);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Welcome to the character configurator. Press Start to begin";
+            this.label2.Text = "Welcome to the RPG character configurator. Press Start to begin";
             // 
             // flowLayoutPanel2
             // 
@@ -127,19 +128,21 @@
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(120, 69);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(55, 37);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(770, 46);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(554, 34);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CharacterConfigurator.Properties.Resources._1403496;
-            this.ClientSize = new System.Drawing.Size(978, 744);
+            this.ClientSize = new System.Drawing.Size(652, 484);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Character Configurator";
             this.Load += new System.EventHandler(this.Form1_Load);

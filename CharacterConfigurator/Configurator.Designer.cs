@@ -78,6 +78,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_ArmorWeapon = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_Bio.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flp_Stats.SuspendLayout();
@@ -728,6 +729,15 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(133, 65);
             this.flowLayoutPanel2.TabIndex = 21;
             // 
+            // flp_ArmorWeapon
+            // 
+            this.flp_ArmorWeapon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_ArmorWeapon.Location = new System.Drawing.Point(486, 53);
+            this.flp_ArmorWeapon.Margin = new System.Windows.Forms.Padding(2);
+            this.flp_ArmorWeapon.Name = "flp_ArmorWeapon";
+            this.flp_ArmorWeapon.Size = new System.Drawing.Size(256, 336);
+            this.flp_ArmorWeapon.TabIndex = 22;
+            // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,6 +745,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1185, 549);
+            this.Controls.Add(this.flp_ArmorWeapon);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flp_Summary);
@@ -831,5 +842,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rb_Creature;
         private System.Windows.Forms.RadioButton rb_Humanoid;
+        private System.Windows.Forms.FlowLayoutPanel flp_ArmorWeapon;
     }
 }
