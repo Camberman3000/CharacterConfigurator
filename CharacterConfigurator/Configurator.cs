@@ -42,32 +42,7 @@ namespace CharacterConfigurator
             comboBoxCharClass.Items.Add(charClass[2]);
             comboBoxCharClass.Items.Add(charClass[3]);
             comboBoxCharClass.Items.Add(charClass[4]);
-            comboBoxCharClass.Items.Add(charClass[5]);
-
-            /* declare matching vars from BaseCharacter class */
-            int strengthLimit = 0;
-            int intLimit = 0;
-            int staminaLimit = 0;
-            string[] armor = new string[] { };
-            List<string> weapons = new List<string>();// New empty list   
-
-            Character_Humanoid charHuman = new Character_Humanoid(strengthLimit, intLimit, staminaLimit, armor, weapons);// Declare new humanoid
-
-            /* Display current values in weapons list (comes from base character class) */
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                MessageBox.Show("Configurator class weapon: " + weapons[i].ToString());
-            }
-
-            /* Display current values in armor array (comes from base character class) */
-            for (int i = 0; i < armor.Length; i++)
-            {
-                MessageBox.Show("Configurator class armor: " + weapons[i].ToString());
-            }
-
-
-
-
+            comboBoxCharClass.Items.Add(charClass[5]);         
 
         }
 
@@ -560,7 +535,51 @@ namespace CharacterConfigurator
             RandomizeCharacter();
         }
 
+        private void btnCreateHuman_Click(object sender, EventArgs e)
+        {
+            /* declare matching vars from BaseCharacter class */
+            int strengthLimit = 0;
+            int intLimit = 0;
+            int staminaLimit = 0;
+            List<string> armor = new List<string>();
+            List<string> weapons = new List<string>();// New empty list   
 
+            Character_Humanoid charHuman = new Character_Humanoid(strengthLimit, intLimit, staminaLimit, armor, weapons);// Declare new humanoid
 
+            /* Display current values in weapons list (comes from base character class) */
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                MessageBox.Show("Configurator class HUMAN weapon: " + weapons[i].ToString());
+            }
+
+            /* Display current values in armor array (comes from base character class) */
+            for (int i = 0; i < armor.Count; i++)
+            {
+                MessageBox.Show("Configurator class HUMAN armor: " + armor[i].ToString());
+            }
+        }
+
+        private void btnCreateCreature_Click(object sender, EventArgs e)
+        {
+            /* declare matching vars from BaseCharacter class */
+            int strengthLimit = 0;
+            int intLimit = 0;
+            int staminaLimit = 0;
+            List<string> armor = new List<string>();
+            List<string> weapons = new List<string>();// New empty list   
+
+            Character_Creature charCreature = new Character_Creature(strengthLimit, intLimit, staminaLimit, armor, weapons);// Declare new creature
+
+            /* Display current values in weapons list (comes from base character class) */
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                MessageBox.Show("Configurator class CREATURE weapon: " + weapons[i].ToString());
+            }
+
+            for (int i = 0; i < armor.Count; i++)
+            {
+                MessageBox.Show("Configurator class CREATURE armor: " + armor[i].ToString());
+            }
+        }
     }
 }

@@ -88,6 +88,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.tbSummaryStam = new System.Windows.Forms.TextBox();
             this.btnRandomizeChar = new System.Windows.Forms.Button();
+            this.btnCreateCreature = new System.Windows.Forms.Button();
+            this.btnCreateHuman = new System.Windows.Forms.Button();
             this.flp_Bio.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flp_Stats.SuspendLayout();
@@ -816,6 +818,36 @@
             this.btnRandomizeChar.UseVisualStyleBackColor = false;
             this.btnRandomizeChar.Click += new System.EventHandler(this.btnRandomizeChar_Click);
             // 
+            // btnCreateCreature
+            // 
+            this.btnCreateCreature.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreateCreature.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCreateCreature.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateCreature.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCreateCreature.Location = new System.Drawing.Point(384, 554);
+            this.btnCreateCreature.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.btnCreateCreature.Name = "btnCreateCreature";
+            this.btnCreateCreature.Size = new System.Drawing.Size(207, 93);
+            this.btnCreateCreature.TabIndex = 23;
+            this.btnCreateCreature.Text = "Create Creature";
+            this.btnCreateCreature.UseVisualStyleBackColor = false;
+            this.btnCreateCreature.Click += new System.EventHandler(this.btnCreateCreature_Click);
+            // 
+            // btnCreateHuman
+            // 
+            this.btnCreateHuman.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreateHuman.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCreateHuman.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateHuman.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCreateHuman.Location = new System.Drawing.Point(173, 554);
+            this.btnCreateHuman.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.btnCreateHuman.Name = "btnCreateHuman";
+            this.btnCreateHuman.Size = new System.Drawing.Size(201, 93);
+            this.btnCreateHuman.TabIndex = 24;
+            this.btnCreateHuman.Text = "Create Human";
+            this.btnCreateHuman.UseVisualStyleBackColor = false;
+            this.btnCreateHuman.Click += new System.EventHandler(this.btnCreateHuman_Click);
+            // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -823,6 +855,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1778, 845);
+            this.Controls.Add(this.btnCreateHuman);
+            this.Controls.Add(this.btnCreateCreature);
             this.Controls.Add(this.flp_ArmorWeapon);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -934,5 +968,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox tbSummaryStam;
         private System.Windows.Forms.Button btnRandomizeChar;
+        private System.Windows.Forms.Button btnCreateCreature;
+        private System.Windows.Forms.Button btnCreateHuman;
     }
 }
