@@ -10,7 +10,7 @@ Nov 20 - 4.5hr
 Nov 22 - 4hr
 Nov 26 - 1 hr
 Nov 27 3 hr
-
+Nov 28 3 hr
 
 TODO: Connect all stat/bio controls to their associated summaries so they get updated when user makes a manual selection (not press rando btn)
 

@@ -10,17 +10,25 @@ namespace CharacterConfigurator
     internal class Character_Creature : BaseCharacter // Inherits from BaseCharacter
     {
         // Armor and Weapon types go here. This data will be used to populate combobox lists of available armor & weapons
-        public Character_Creature(int strengthLimit, int intelligenceLimit, int staminaLimit, List<string> armor, List<string> weapons) : base(strengthLimit, intelligenceLimit, staminaLimit, armor, weapons)
+        public Character_Creature(List<string> armor, List<string> weapons) : base(armor, weapons)
         {
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                MessageBox.Show("CREATURE CLASS weapons: " + weapons[i].ToString());
-            }
+            /* Creature-Specific gear - Added to base class items */
+            armor.Add("Pearly Chitin");
+            armor.Add("Thick Barnacle");
 
-            for (int i = 0; i < armor.Count; i++)
-            {
-                MessageBox.Show("CREATURE CLASS armor: " + armor[i].ToString());
-            }
+            weapons.Add("Sword");
+            weapons.Add("Staff");
+
+
+            //for (int i = 0; i < weapons.Count; i++)
+            //{
+            //    MessageBox.Show("CREATURE CLASS weapons: " + weapons[i].ToString());
+            //}
+
+            //for (int i = 0; i < armor.Count; i++)
+            //{
+            //    MessageBox.Show("CREATURE CLASS armor: " + armor[i].ToString());
+            //}
         }
     }
 }

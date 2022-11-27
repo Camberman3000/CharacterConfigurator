@@ -313,7 +313,7 @@ namespace CharacterConfigurator
 
             /* Populate text */
             string fullName = firstName + " " + lastName;// Concat
-            textBoxSummaryCharName.Text = fullName;
+            tbSummaryCharName.Text = fullName;
 
             /* Populate Summary data */
             textBoxCharFirstName.Text = firstName;
@@ -321,11 +321,11 @@ namespace CharacterConfigurator
 
             int r3 = GetRandNum(0, comboBoxHometown.Items.Count - 1);
             comboBoxHometown.SelectedIndex = r3;
-            textBoxHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
+            tbSummaryHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
 
             int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
             comboBoxCharClass.SelectedIndex = r4;
-            textBoxCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
+            tbSummaryCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
 
             tbSummaryStr.Text = tbStatStr.Text;
             tbSummaryInt.Text = tbStatInt.Text;
@@ -345,11 +345,11 @@ namespace CharacterConfigurator
 
             if (rb_Humanoid.Checked)
             {
-                tb_CharRace.Text = "Humanoid";
+                tbSummaryCharRace.Text = "Humanoid";
             }
             else if (rb_Creature.Checked)
             {
-                tb_CharRace.Text = "Creature";
+                tbSummaryCharRace.Text = "Creature";
             }
         }
 
@@ -379,7 +379,7 @@ namespace CharacterConfigurator
 
             /* Populate text */
             string fullName = firstName + " " + lastName;// Concat
-            textBoxSummaryCharName.Text = fullName;
+            tbSummaryCharName.Text = fullName;
 
             /* Populate Summary data */
             textBoxCharFirstName.Text = firstName;
@@ -387,11 +387,11 @@ namespace CharacterConfigurator
 
             int r3 = GetRandNum(0, comboBoxHometown.Items.Count - 1);
             comboBoxHometown.SelectedIndex = r3;
-            textBoxHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
+            tbSummaryHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
 
             int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
             comboBoxCharClass.SelectedIndex = r4;
-            textBoxCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
+            tbSummaryCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
                      
             int r5 = GetRandNum(0, 100);
             int r5a = r5 % 2;
@@ -407,11 +407,11 @@ namespace CharacterConfigurator
 
             if (rb_Humanoid.Checked)
             {
-                tb_CharRace.Text = "Humanoid";
+                tbSummaryCharRace.Text = "Humanoid";
             }
             else if (rb_Creature.Checked)
             {
-                tb_CharRace.Text = "Creature";
+                tbSummaryCharRace.Text = "Creature";
             }
         }
 
@@ -521,13 +521,90 @@ namespace CharacterConfigurator
         }
 
         private void rb_Humanoid_CheckedChanged(object sender, EventArgs e)
-        {
-            // Create msgbox popup to warn player that changing this will also reset any race-specific selections
-        }
+        {            
+            if (rb_Humanoid.Checked)// User checked Humanoid rb?
+            {
+                //MessageBox.Show("Humanoid checked");
+                DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    //...
+                    tbGearClass.Text = "Humanoid";
+                    tbSummaryCharClass.Text = "Humanoid";
+
+                    List<string> armor = new List<string>();
+                    List<string> weapons = new List<string>();// New empty list   
+                   
+                    Character_Humanoid charHuman = new Character_Humanoid(armor, weapons);// Declare new humanoid
+                    cbArmor.Items.Clear();// Clear list before populating with data
+                    cbArmor.SelectedIndex= -1;// Set selection to null
+                    tbSummaryArmor.Text = "";// Clear summary
+                    for (int i = 0; i < armor.Count; i++)// Loop through armor list
+                    {
+                        cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
+                    }
+
+                    cbWeapon.Items.Clear();// Clear list before populating with data
+                    cbWeapon.SelectedIndex = -1;// Set selection to null
+                    tbSummaryWeapon.Text = "";// Clear summary
+                    for (int i = 0; i < weapons.Count; i++)// Loop through armor list
+                    {
+                        cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
+                    }
+
+                }
+                else if (result == DialogResult.No)
+                {
+                    //...
+                }
+                else
+                {
+                    //...
+                }
+            }                         
+        }        
 
         private void rb_Creature_CheckedChanged(object sender, EventArgs e)
-        {
-            // Create msgbox popup to warn player that changing this will also reset any race-specific selections
+        {                  
+            if (rb_Creature.Checked)
+            {
+                //MessageBox.Show("Creature checked");
+                DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    //...
+                    tbGearClass.Text = "Creature";
+                    tbSummaryCharClass.Text = "Creature";
+
+                    List<string> armor = new List<string>();
+                    List<string> weapons = new List<string>();// New empty list   
+
+                    Character_Creature charCreature = new Character_Creature(armor, weapons);// Declare new creature
+                    cbArmor.Items.Clear();// Clear list before populating with data
+                    cbArmor.SelectedIndex = -1;// Set selection to null
+                    tbSummaryArmor.Text = "";// Clear summary
+                    for (int i = 0; i < armor.Count; i++)// Loop through armor list
+                    {
+                        cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
+                    }
+
+                    cbWeapon.Items.Clear();// Clear list before populating with data
+                    cbWeapon.SelectedIndex = -1;// Set selection to null
+                    tbSummaryWeapon.Text = "";// Clear summary
+                    for (int i = 0; i < weapons.Count; i++)// Loop through armor list
+                    {
+                        cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+                    //...
+                }
+                else
+                {
+                    //...
+                }
+            }                          
         }
 
         private void btnRandomizeChar_Click(object sender, EventArgs e)
@@ -538,37 +615,43 @@ namespace CharacterConfigurator
         private void btnCreateHuman_Click(object sender, EventArgs e)
         {
             /* declare matching vars from BaseCharacter class */
-            int strengthLimit = 0;
-            int intLimit = 0;
-            int staminaLimit = 0;
+           
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
 
-            Character_Humanoid charHuman = new Character_Humanoid(strengthLimit, intLimit, staminaLimit, armor, weapons);// Declare new humanoid
-
-            /* Display current values in weapons list (comes from base character class) */
-            for (int i = 0; i < weapons.Count; i++)
+            Character_Humanoid charHuman = new Character_Humanoid(armor, weapons);// Declare new humanoid
+            cbArmor.Items.Clear();// Clear list before populating with data
+            for (int i = 0; i < armor.Count; i++)// Loop through armor list
             {
-                MessageBox.Show("Configurator class HUMAN weapon: " + weapons[i].ToString());
+                cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
             }
 
-            /* Display current values in armor array (comes from base character class) */
-            for (int i = 0; i < armor.Count; i++)
+            cbWeapon.Items.Clear();// Clear list before populating with data
+            for (int i = 0; i < weapons.Count; i++)// Loop through armor list
             {
-                MessageBox.Show("Configurator class HUMAN armor: " + armor[i].ToString());
+                cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
             }
+
+            ///* Display current values in weapons list (comes from base character class) */
+            //for (int i = 0; i < weapons.Count; i++)
+            //{
+            //    MessageBox.Show("Configurator class HUMAN weapon: " + weapons[i].ToString());
+            //}
+
+            ///* Display current values in armor array (comes from base character class) */
+            //for (int i = 0; i < armor.Count; i++)
+            //{
+            //    MessageBox.Show("Configurator class HUMAN armor: " + armor[i].ToString());
+            //}
         }
 
         private void btnCreateCreature_Click(object sender, EventArgs e)
         {
-            /* declare matching vars from BaseCharacter class */
-            int strengthLimit = 0;
-            int intLimit = 0;
-            int staminaLimit = 0;
+            /* declare matching vars from BaseCharacter class */           
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
 
-            Character_Creature charCreature = new Character_Creature(strengthLimit, intLimit, staminaLimit, armor, weapons);// Declare new creature
+            Character_Creature charCreature = new Character_Creature(armor, weapons);// Declare new creature
 
             /* Display current values in weapons list (comes from base character class) */
             for (int i = 0; i < weapons.Count; i++)
@@ -580,6 +663,16 @@ namespace CharacterConfigurator
             {
                 MessageBox.Show("Configurator class CREATURE armor: " + armor[i].ToString());
             }
+        }
+
+        private void cbArmor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSummaryArmor.Text = cbArmor.SelectedItem.ToString();
+        }
+
+        private void cbWeapon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSummaryWeapon.Text = cbWeapon.SelectedItem.ToString();
         }
     }
 }

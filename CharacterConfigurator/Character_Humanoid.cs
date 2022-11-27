@@ -10,17 +10,25 @@ namespace CharacterConfigurator
     internal class Character_Humanoid : BaseCharacter // Inherits from BaseCharacter
     {
         // Armor and Weapon types go here. This data will be used to populate combobox lists of available armor & weapons
-        public Character_Humanoid(int strengthLimit, int intelligenceLimit, int staminaLimit, List<string> armor, List<string> weapons) : base(strengthLimit, intelligenceLimit, staminaLimit, armor, weapons)
+        public Character_Humanoid(List<string> armor, List<string> weapons) : base(armor, weapons)
         {
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                MessageBox.Show("HUMANOID CLASS weapons: " + weapons[i].ToString());
-            }
+            /* Human-Specific gear - Added to base class items */
+            armor.Add("Chain Mail");
+            armor.Add("Plate Mail");
 
-            for (int i = 0; i < armor.Count; i++)
-            {
-                MessageBox.Show("HUMANOID CLASS armor: " + armor[i].ToString());
-            }
+            weapons.Add("Club");
+            weapons.Add("Mace");
+
+
+            //for (int i = 0; i < weapons.Count; i++)
+            //{
+            //    MessageBox.Show("HUMANOID CLASS weapons: " + weapons[i].ToString());
+            //}
+
+            //for (int i = 0; i < armor.Count; i++)
+            //{
+            //    MessageBox.Show("HUMANOID CLASS armor: " + armor[i].ToString());
+            //}
         }
     }
 }
