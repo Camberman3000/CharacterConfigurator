@@ -44,6 +44,31 @@ namespace CharacterConfigurator
             comboBoxCharClass.Items.Add(charClass[4]);
             comboBoxCharClass.Items.Add(charClass[5]);
 
+            /* declare matching vars from BaseCharacter class */
+            int strengthLimit = 0;
+            int intLimit = 0;
+            int staminaLimit = 0;
+            string[] armor = new string[] { };
+            List<string> weapons = new List<string>();// New empty list   
+
+            Character_Humanoid charHuman = new Character_Humanoid(strengthLimit, intLimit, staminaLimit, armor, weapons);// Declare new humanoid
+
+            /* Display current values in weapons list (comes from base character class) */
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                MessageBox.Show("Configurator class weapon: " + weapons[i].ToString());
+            }
+
+            /* Display current values in armor array (comes from base character class) */
+            for (int i = 0; i < armor.Length; i++)
+            {
+                MessageBox.Show("Configurator class armor: " + weapons[i].ToString());
+            }
+
+
+
+
+
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -130,35 +155,35 @@ namespace CharacterConfigurator
             /* Display random stat results */
             if (randNum1 > 10)
             {
-                textBoxStatStr.Text = "10";
+                tbStatStr.Text = "10";
                 trackBarStrength.Value = 10;
             }
             else
             {
-                textBoxStatStr.Text = randNum1.ToString();
+                tbStatStr.Text = randNum1.ToString();
                 trackBarStrength.Value = randNum1;
             }
 
             /* Catch out of range */
             if (randNum2 > 10)
             {
-                textBoxStatInt.Text = "10";
+                tbStatInt.Text = "10";
                 trackBarInt.Value = 10;
             }
             else
             {
-                textBoxStatInt.Text = randNum2.ToString();
+                tbStatInt.Text = randNum2.ToString();
                 trackBarInt.Value = randNum2;
             }
 
             if (randNum3 > 10)
             {
-                textBoxStatStam.Text = "10";
+                tbStatStam.Text = "10";
                 trackBarStam.Value = 10;
             }
             else
             {
-                textBoxStatStam.Text = randNum3.ToString();
+                tbStatStam.Text = randNum3.ToString();
                 trackBarStam.Value = randNum3;
             }               
         }
@@ -177,7 +202,7 @@ namespace CharacterConfigurator
 
         private void trackBarStrength_Scroll(object sender, EventArgs e)
         {
-            textBoxStatStr.Text = trackBarStrength.Value.ToString();
+            tbStatStr.Text = trackBarStrength.Value.ToString();
             int statStr = Int32.Parse(trackBarStrength.Value.ToString());
 
             if (statStr > statStrNum)// Did value increase?
@@ -189,7 +214,7 @@ namespace CharacterConfigurator
 
         private void trackBarInt_Scroll(object sender, EventArgs e)
         {
-            textBoxStatInt.Text = trackBarInt.Value.ToString();
+            tbStatInt.Text = trackBarInt.Value.ToString();
             int statInt = Int32.Parse(trackBarInt.Value.ToString());
 
             if (statInt > statIntNum)
@@ -201,7 +226,7 @@ namespace CharacterConfigurator
 
         private void trackBarStam_Scroll(object sender, EventArgs e)
         {
-            textBoxStatStam.Text = trackBarStam.Value.ToString();
+            tbStatStam.Text = trackBarStam.Value.ToString();
             int statStam = Int32.Parse(trackBarStam.Value.ToString());
 
             if (statStam > statStamNum)
@@ -214,9 +239,9 @@ namespace CharacterConfigurator
         private void CheckOverage(string stat)// Gets value over max of 20 points
         {
             int subTotal = 0;
-            int str = Int32.Parse(textBoxStatStr.Text);
-            int intel = Int32.Parse(textBoxStatInt.Text); 
-            int stam = Int32.Parse(textBoxStatStam.Text);
+            int str = Int32.Parse(tbStatStr.Text);
+            int intel = Int32.Parse(tbStatInt.Text); 
+            int stam = Int32.Parse(tbStatStam.Text);
             int overage = 0;
 
             subTotal = str + intel + stam;
@@ -284,13 +309,13 @@ namespace CharacterConfigurator
             }
 
             /* Populate textboxes and assign slider values */
-            textBoxStatStr.Text = str.ToString();
+            tbStatStr.Text = str.ToString();
             trackBarStrength.Value = str;
 
-            textBoxStatInt.Text = intel.ToString();
+            tbStatInt.Text = intel.ToString();
             trackBarInt.Value = intel;
 
-            textBoxStatStam.Text = stam.ToString();
+            tbStatStam.Text = stam.ToString();
             trackBarStam.Value = stam; 
         }
 
@@ -315,7 +340,7 @@ namespace CharacterConfigurator
             string fullName = firstName + " " + lastName;// Concat
             textBoxSummaryCharName.Text = fullName;
 
-            /* Populate name in textboxes */
+            /* Populate Summary data */
             textBoxCharFirstName.Text = firstName;
             textBoxCharLastName.Text = lastName;
 
@@ -326,7 +351,184 @@ namespace CharacterConfigurator
             int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
             comboBoxCharClass.SelectedIndex = r4;
             textBoxCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
+
+            tbSummaryStr.Text = tbStatStr.Text;
+            tbSummaryInt.Text = tbStatInt.Text;
+            tbSummaryStam.Text = tbStatStam.Text;
+
+            int r5 = GetRandNum(0, 100);
+            int r5a = r5 % 2;
+
+            if (r5a == 0)
+            {
+                rb_Humanoid.Checked = true;
+            }
+            else
+            {
+                rb_Creature.Checked = true;
+            }
+
+            if (rb_Humanoid.Checked)
+            {
+                tb_CharRace.Text = "Humanoid";
+            }
+            else if (rb_Creature.Checked)
+            {
+                tb_CharRace.Text = "Creature";
+            }
         }
+
+        private void RandomizeCharacter()
+        {
+            GetRandomBio();
+
+            GetRandomStats();          
+        }
+
+        private void GetRandomBio()
+        {
+            /* Name arrays */
+            string[] firstNameArr = { "Alexia", "Lauren ", "Esme ", "Saylah ", "Oran ", "Mahle ", "Wiseco ", "Milodon " };
+            string[] lastNameArr = { "Beasley ", "Beard", "Sanford", "Tang", "Slade", "Baker", "Smith" };
+
+            string firstName;
+            string lastName;
+
+            /* Get random number */
+            int r1 = GetRandNum(0, firstNameArr.Length);
+            int r2 = GetRandNum(0, lastNameArr.Length);
+
+            /* Assign random number to array index */
+            firstName = firstNameArr[r1];
+            lastName = lastNameArr[r2];
+
+            /* Populate text */
+            string fullName = firstName + " " + lastName;// Concat
+            textBoxSummaryCharName.Text = fullName;
+
+            /* Populate Summary data */
+            textBoxCharFirstName.Text = firstName;
+            textBoxCharLastName.Text = lastName;
+
+            int r3 = GetRandNum(0, comboBoxHometown.Items.Count - 1);
+            comboBoxHometown.SelectedIndex = r3;
+            textBoxHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
+
+            int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
+            comboBoxCharClass.SelectedIndex = r4;
+            textBoxCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
+                     
+            int r5 = GetRandNum(0, 100);
+            int r5a = r5 % 2;
+
+            if (r5a == 0)
+            {
+                rb_Humanoid.Checked = true;
+            }
+            else
+            {
+                rb_Creature.Checked = true;
+            }
+
+            if (rb_Humanoid.Checked)
+            {
+                tb_CharRace.Text = "Humanoid";
+            }
+            else if (rb_Creature.Checked)
+            {
+                tb_CharRace.Text = "Creature";
+            }
+        }
+
+        private void GetRandomStats()
+        {
+            /* Get random number between 10-20 */
+            int randNum1 = GetRandNum(10, 20);
+            int randNum2 = GetRandNum(10, 20);
+            int randNum3 = GetRandNum(10, 20);
+
+            int subTotal = randNum1 + randNum2 + randNum3;// Subtotal of all randomly generated numbers
+            int overage = 0;// Var
+
+            if (subTotal > 20)// Random value total is over 20?
+            {
+                overage = subTotal - 20;
+            }
+
+            int trimAmt = overage / 3;// How much to trim from each random number
+            int remainder = overage % 3;// Remainder after division
+
+            /* Subtract trimAmt from each random number */
+            randNum1 -= trimAmt;
+            randNum2 -= trimAmt;
+            randNum3 -= trimAmt;
+
+            if (remainder > 0)// Could be between 0-2
+            {
+                int statToAdjust = GetRandNum(1, 3);// Get random number between 1 and 3
+
+                /* Trim random stat */
+                switch (statToAdjust)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        randNum1 = randNum1 -= remainder;
+                        break;
+                    case 2:
+                        randNum2 = randNum2 -= remainder;
+                        break;
+                    case 3:
+                        randNum3 = randNum3 -= remainder;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            /* Display random stat results */
+            if (randNum1 > 10)
+            {
+                tbStatStr.Text = "10";
+                trackBarStrength.Value = 10;
+            }
+            else
+            {
+                tbStatStr.Text = randNum1.ToString();
+                trackBarStrength.Value = randNum1;
+            }
+
+            /* Catch out of range */
+            if (randNum2 > 10)
+            {
+                tbStatInt.Text = "10";
+                trackBarInt.Value = 10;
+            }
+            else
+            {
+                tbStatInt.Text = randNum2.ToString();
+                trackBarInt.Value = randNum2;
+            }
+
+            if (randNum3 > 10)
+            {
+                tbStatStam.Text = "10";
+                trackBarStam.Value = 10;
+            }
+            else
+            {
+                tbStatStam.Text = randNum3.ToString();
+                trackBarStam.Value = randNum3;
+            }
+
+            /* Populate summary boxes */
+            tbSummaryStr.Text = tbStatStr.Text;
+            tbSummaryInt.Text = tbStatInt.Text;
+            tbSummaryStam.Text = tbStatStam.Text;
+
+
+        }
+
 
         private void flp_Bio_Paint(object sender, PaintEventArgs e)
         {
@@ -352,5 +554,13 @@ namespace CharacterConfigurator
         {
             // Create msgbox popup to warn player that changing this will also reset any race-specific selections
         }
+
+        private void btnRandomizeChar_Click(object sender, EventArgs e)
+        {
+            RandomizeCharacter();
+        }
+
+
+
     }
 }
