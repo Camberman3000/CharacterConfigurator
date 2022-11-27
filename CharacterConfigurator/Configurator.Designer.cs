@@ -1107,9 +1107,10 @@
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.btnRandomizeChar);
             this.Controls.Add(this.buttonSaveConfig);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Configurator";
-            this.Text = "Configurator";
+            this.Text = "Character Configurator";
             this.Load += new System.EventHandler(this.Configurator_Load);
             this.flp_Bio.ResumeLayout(false);
             this.flp_Bio.PerformLayout();
