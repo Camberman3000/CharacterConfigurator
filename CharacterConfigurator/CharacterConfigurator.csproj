@@ -99,7 +99,7 @@
     <None Include="Resources\1141048.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\icons8-character-85.ico" />
+    <Content Include="Resources\career_leadership_learn_development_growth_motivation_icon_230347.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -83,25 +83,25 @@
             this.tbSummaryInt = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tbSummaryStam = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbSummaryArmor = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbSummaryWeapon = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_ArmorWeapon = new System.Windows.Forms.FlowLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnRandomizeChar = new System.Windows.Forms.Button();
-            this.tbGearClass = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tbGearClass = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.cbArmor = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
             this.cbWeapon = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tbSummaryArmor = new System.Windows.Forms.TextBox();
-            this.tbSummaryWeapon = new System.Windows.Forms.TextBox();
+            this.btnRandomizeChar = new System.Windows.Forms.Button();
             this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_Bio.SuspendLayout();
@@ -119,13 +119,13 @@
             this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
+            this.flowLayoutPanel14.SuspendLayout();
+            this.flowLayoutPanel15.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flp_ArmorWeapon.SuspendLayout();
             this.flowLayoutPanel11.SuspendLayout();
             this.flowLayoutPanel12.SuspendLayout();
             this.flowLayoutPanel13.SuspendLayout();
-            this.flowLayoutPanel14.SuspendLayout();
-            this.flowLayoutPanel15.SuspendLayout();
             this.flowLayoutPanel16.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -827,6 +827,78 @@
             this.tbSummaryStam.Size = new System.Drawing.Size(41, 20);
             this.tbSummaryStam.TabIndex = 23;
             // 
+            // flowLayoutPanel14
+            // 
+            this.flowLayoutPanel14.AutoSize = true;
+            this.flowLayoutPanel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel14.Controls.Add(this.label24);
+            this.flowLayoutPanel14.Controls.Add(this.tbSummaryArmor);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(2, 163);
+            this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel14.Name = "flowLayoutPanel14";
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(280, 28);
+            this.flowLayoutPanel14.TabIndex = 26;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.Control;
+            this.label24.Location = new System.Drawing.Point(5, 5);
+            this.label24.Margin = new System.Windows.Forms.Padding(5);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(65, 18);
+            this.label24.TabIndex = 16;
+            this.label24.Text = "Armor    ";
+            // 
+            // tbSummaryArmor
+            // 
+            this.tbSummaryArmor.Location = new System.Drawing.Point(77, 2);
+            this.tbSummaryArmor.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSummaryArmor.Name = "tbSummaryArmor";
+            this.tbSummaryArmor.ReadOnly = true;
+            this.tbSummaryArmor.Size = new System.Drawing.Size(201, 20);
+            this.tbSummaryArmor.TabIndex = 20;
+            // 
+            // flowLayoutPanel15
+            // 
+            this.flowLayoutPanel15.AutoSize = true;
+            this.flowLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel15.Controls.Add(this.label25);
+            this.flowLayoutPanel15.Controls.Add(this.tbSummaryWeapon);
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(2, 195);
+            this.flowLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(280, 28);
+            this.flowLayoutPanel15.TabIndex = 27;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.SystemColors.Control;
+            this.label25.Location = new System.Drawing.Point(5, 5);
+            this.label25.Margin = new System.Windows.Forms.Padding(5);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(64, 18);
+            this.label25.TabIndex = 16;
+            this.label25.Text = "Weapon";
+            // 
+            // tbSummaryWeapon
+            // 
+            this.tbSummaryWeapon.Location = new System.Drawing.Point(76, 2);
+            this.tbSummaryWeapon.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSummaryWeapon.Name = "tbSummaryWeapon";
+            this.tbSummaryWeapon.ReadOnly = true;
+            this.tbSummaryWeapon.Size = new System.Drawing.Size(202, 20);
+            this.tbSummaryWeapon.TabIndex = 21;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -869,29 +941,18 @@
             this.label20.TabIndex = 15;
             this.label20.Text = "Class-Specific Gear";
             // 
-            // btnRandomizeChar
+            // flowLayoutPanel11
             // 
-            this.btnRandomizeChar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRandomizeChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnRandomizeChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRandomizeChar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRandomizeChar.Location = new System.Drawing.Point(261, 350);
-            this.btnRandomizeChar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnRandomizeChar.Name = "btnRandomizeChar";
-            this.btnRandomizeChar.Size = new System.Drawing.Size(122, 49);
-            this.btnRandomizeChar.TabIndex = 18;
-            this.btnRandomizeChar.Text = "Randomize";
-            this.btnRandomizeChar.UseVisualStyleBackColor = false;
-            this.btnRandomizeChar.Click += new System.EventHandler(this.btnRandomizeChar_Click);
-            // 
-            // tbGearClass
-            // 
-            this.tbGearClass.Location = new System.Drawing.Point(114, 2);
-            this.tbGearClass.Margin = new System.Windows.Forms.Padding(2);
-            this.tbGearClass.Name = "tbGearClass";
-            this.tbGearClass.ReadOnly = true;
-            this.tbGearClass.Size = new System.Drawing.Size(158, 20);
-            this.tbGearClass.TabIndex = 19;
+            this.flowLayoutPanel11.AutoSize = true;
+            this.flowLayoutPanel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel11.Controls.Add(this.label21);
+            this.flowLayoutPanel11.Controls.Add(this.tbGearClass);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(2, 30);
+            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(274, 28);
+            this.flowLayoutPanel11.TabIndex = 22;
             // 
             // label21
             // 
@@ -907,18 +968,14 @@
             this.label21.TabIndex = 16;
             this.label21.Text = "Chosen Class";
             // 
-            // flowLayoutPanel11
+            // tbGearClass
             // 
-            this.flowLayoutPanel11.AutoSize = true;
-            this.flowLayoutPanel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.flowLayoutPanel11.Controls.Add(this.label21);
-            this.flowLayoutPanel11.Controls.Add(this.tbGearClass);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(2, 30);
-            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(274, 28);
-            this.flowLayoutPanel11.TabIndex = 22;
+            this.tbGearClass.Location = new System.Drawing.Point(114, 2);
+            this.tbGearClass.Margin = new System.Windows.Forms.Padding(2);
+            this.tbGearClass.Name = "tbGearClass";
+            this.tbGearClass.ReadOnly = true;
+            this.tbGearClass.Size = new System.Drawing.Size(158, 20);
+            this.tbGearClass.TabIndex = 19;
             // 
             // flowLayoutPanel12
             // 
@@ -994,77 +1051,20 @@
             this.cbWeapon.TabIndex = 17;
             this.cbWeapon.SelectedIndexChanged += new System.EventHandler(this.cbWeapon_SelectedIndexChanged);
             // 
-            // flowLayoutPanel14
+            // btnRandomizeChar
             // 
-            this.flowLayoutPanel14.AutoSize = true;
-            this.flowLayoutPanel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.flowLayoutPanel14.Controls.Add(this.label24);
-            this.flowLayoutPanel14.Controls.Add(this.tbSummaryArmor);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(2, 163);
-            this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(280, 28);
-            this.flowLayoutPanel14.TabIndex = 26;
-            // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.Control;
-            this.label24.Location = new System.Drawing.Point(5, 5);
-            this.label24.Margin = new System.Windows.Forms.Padding(5);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(65, 18);
-            this.label24.TabIndex = 16;
-            this.label24.Text = "Armor    ";
-            // 
-            // flowLayoutPanel15
-            // 
-            this.flowLayoutPanel15.AutoSize = true;
-            this.flowLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.flowLayoutPanel15.Controls.Add(this.label25);
-            this.flowLayoutPanel15.Controls.Add(this.tbSummaryWeapon);
-            this.flowLayoutPanel15.Location = new System.Drawing.Point(2, 195);
-            this.flowLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(280, 28);
-            this.flowLayoutPanel15.TabIndex = 27;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(5, 5);
-            this.label25.Margin = new System.Windows.Forms.Padding(5);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(64, 18);
-            this.label25.TabIndex = 16;
-            this.label25.Text = "Weapon";
-            // 
-            // tbSummaryArmor
-            // 
-            this.tbSummaryArmor.Location = new System.Drawing.Point(77, 2);
-            this.tbSummaryArmor.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSummaryArmor.Name = "tbSummaryArmor";
-            this.tbSummaryArmor.ReadOnly = true;
-            this.tbSummaryArmor.Size = new System.Drawing.Size(201, 20);
-            this.tbSummaryArmor.TabIndex = 20;
-            // 
-            // tbSummaryWeapon
-            // 
-            this.tbSummaryWeapon.Location = new System.Drawing.Point(76, 2);
-            this.tbSummaryWeapon.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSummaryWeapon.Name = "tbSummaryWeapon";
-            this.tbSummaryWeapon.ReadOnly = true;
-            this.tbSummaryWeapon.Size = new System.Drawing.Size(202, 20);
-            this.tbSummaryWeapon.TabIndex = 21;
+            this.btnRandomizeChar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRandomizeChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnRandomizeChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRandomizeChar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRandomizeChar.Location = new System.Drawing.Point(261, 350);
+            this.btnRandomizeChar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnRandomizeChar.Name = "btnRandomizeChar";
+            this.btnRandomizeChar.Size = new System.Drawing.Size(122, 49);
+            this.btnRandomizeChar.TabIndex = 18;
+            this.btnRandomizeChar.Text = "Randomize";
+            this.btnRandomizeChar.UseVisualStyleBackColor = false;
+            this.btnRandomizeChar.Click += new System.EventHandler(this.btnRandomizeChar_Click);
             // 
             // flowLayoutPanel16
             // 
@@ -1139,6 +1139,10 @@
             this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
             this.flowLayoutPanel10.PerformLayout();
+            this.flowLayoutPanel14.ResumeLayout(false);
+            this.flowLayoutPanel14.PerformLayout();
+            this.flowLayoutPanel15.ResumeLayout(false);
+            this.flowLayoutPanel15.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flp_ArmorWeapon.ResumeLayout(false);
@@ -1149,10 +1153,6 @@
             this.flowLayoutPanel12.PerformLayout();
             this.flowLayoutPanel13.ResumeLayout(false);
             this.flowLayoutPanel13.PerformLayout();
-            this.flowLayoutPanel14.ResumeLayout(false);
-            this.flowLayoutPanel14.PerformLayout();
-            this.flowLayoutPanel15.ResumeLayout(false);
-            this.flowLayoutPanel15.PerformLayout();
             this.flowLayoutPanel16.ResumeLayout(false);
             this.flowLayoutPanel16.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
