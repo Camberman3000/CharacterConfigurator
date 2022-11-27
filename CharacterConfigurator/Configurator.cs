@@ -14,6 +14,9 @@ namespace CharacterConfigurator
 {
     public partial class Configurator : Form
     {
+        bool bRandomize = false;
+
+
         private Form1 form1;// Declare Form1        
 
         public Configurator(Form1 form1)// Pass in Form1
@@ -357,7 +360,9 @@ namespace CharacterConfigurator
         {
             GetRandomBio();
 
-            GetRandomStats();          
+            GetRandomStats();
+
+            GetRandomGear();
         }
 
         private void GetRandomBio()
@@ -377,7 +382,7 @@ namespace CharacterConfigurator
             firstName = firstNameArr[r1];
             lastName = lastNameArr[r2];
 
-            /* Populate text */
+            /* Populate summary text */
             string fullName = firstName + " " + lastName;// Concat
             tbSummaryCharName.Text = fullName;
 
@@ -393,26 +398,28 @@ namespace CharacterConfigurator
             comboBoxCharClass.SelectedIndex = r4;
             tbSummaryCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
                      
-            int r5 = GetRandNum(0, 100);
-            int r5a = r5 % 2;
+            int r5 = GetRandNum(0, 100);// Get random number
+            int r5a = r5 % 2;// Get remainder, checking for even/odd
 
-            if (r5a == 0)
+            if (r5a == 0)// Is even?
             {
                 rb_Humanoid.Checked = true;
+                tbSummaryCharRace.Text = "Humanoid";
             }
             else
             {
                 rb_Creature.Checked = true;
-            }
-
-            if (rb_Humanoid.Checked)
-            {
-                tbSummaryCharRace.Text = "Humanoid";
-            }
-            else if (rb_Creature.Checked)
-            {
                 tbSummaryCharRace.Text = "Creature";
             }
+
+            //if (rb_Humanoid.Checked)
+            //{
+            //    tbSummaryCharRace.Text = "Humanoid";
+            //}
+            //else if (rb_Creature.Checked)
+            //{
+            //    tbSummaryCharRace.Text = "Creature";
+            //}
         }
 
         private void GetRandomStats()
@@ -500,10 +507,22 @@ namespace CharacterConfigurator
             tbSummaryStr.Text = tbStatStr.Text;
             tbSummaryInt.Text = tbStatInt.Text;
             tbSummaryStam.Text = tbStatStam.Text;
-
-
         }
 
+        private void GetRandomGear()
+        {
+            /* Random number between index 0 and last index */
+            int r1 = GetRandNum(0, cbArmor.Items.Count);
+            int r2 = GetRandNum(0, cbWeapon.Items.Count);
+            
+            /* Set combobox to the random index */
+            cbArmor.SelectedIndex = r1;
+            cbWeapon.SelectedIndex = r2;
+
+            /* Set summary text */
+            tbSummaryArmor.Text = cbArmor.SelectedItem.ToString();
+            tbSummaryWeapon.Text = cbWeapon.SelectedItem.ToString();
+        }
 
         private void flp_Bio_Paint(object sender, PaintEventArgs e)
         {
@@ -524,147 +543,119 @@ namespace CharacterConfigurator
         {            
             if (rb_Humanoid.Checked)// User checked Humanoid rb?
             {
-                //MessageBox.Show("Humanoid checked");
-                DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (bRandomize)
                 {
-                    //...
-                    tbGearClass.Text = "Humanoid";
-                    tbSummaryCharClass.Text = "Humanoid";
-
-                    List<string> armor = new List<string>();
-                    List<string> weapons = new List<string>();// New empty list   
-                   
-                    Character_Humanoid charHuman = new Character_Humanoid(armor, weapons);// Declare new humanoid
-                    cbArmor.Items.Clear();// Clear list before populating with data
-                    cbArmor.SelectedIndex= -1;// Set selection to null
-                    tbSummaryArmor.Text = "";// Clear summary
-                    for (int i = 0; i < armor.Count; i++)// Loop through armor list
-                    {
-                        cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
-                    }
-
-                    cbWeapon.Items.Clear();// Clear list before populating with data
-                    cbWeapon.SelectedIndex = -1;// Set selection to null
-                    tbSummaryWeapon.Text = "";// Clear summary
-                    for (int i = 0; i < weapons.Count; i++)// Loop through armor list
-                    {
-                        cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
-                    }
-
-                }
-                else if (result == DialogResult.No)
-                {
-                    //...
+                    bRandomize = false;// Reset bool
+                    HumanoidSelected();// Randomize chosen - Don't ask for confirmation
                 }
                 else
                 {
-                    //...
+                    DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        //...
+                        HumanoidSelected();
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        //...
+                    }
+                    else
+                    {
+                        //...
+                    }
                 }
+               
             }                         
         }        
 
-        private void rb_Creature_CheckedChanged(object sender, EventArgs e)
-        {                  
-            if (rb_Creature.Checked)
-            {
-                //MessageBox.Show("Creature checked");
-                DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    //...
-                    tbGearClass.Text = "Creature";
-                    tbSummaryCharClass.Text = "Creature";
-
-                    List<string> armor = new List<string>();
-                    List<string> weapons = new List<string>();// New empty list   
-
-                    Character_Creature charCreature = new Character_Creature(armor, weapons);// Declare new creature
-                    cbArmor.Items.Clear();// Clear list before populating with data
-                    cbArmor.SelectedIndex = -1;// Set selection to null
-                    tbSummaryArmor.Text = "";// Clear summary
-                    for (int i = 0; i < armor.Count; i++)// Loop through armor list
-                    {
-                        cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
-                    }
-
-                    cbWeapon.Items.Clear();// Clear list before populating with data
-                    cbWeapon.SelectedIndex = -1;// Set selection to null
-                    tbSummaryWeapon.Text = "";// Clear summary
-                    for (int i = 0; i < weapons.Count; i++)// Loop through armor list
-                    {
-                        cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
-                    }
-                }
-                else if (result == DialogResult.No)
-                {
-                    //...
-                }
-                else
-                {
-                    //...
-                }
-            }                          
-        }
-
-        private void btnRandomizeChar_Click(object sender, EventArgs e)
+        private void HumanoidSelected()
         {
-            RandomizeCharacter();
-        }
+            tbGearClass.Text = "Humanoid";
+            tbSummaryCharClass.Text = "Humanoid";
 
-        private void btnCreateHuman_Click(object sender, EventArgs e)
-        {
-            /* declare matching vars from BaseCharacter class */
-           
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
 
             Character_Humanoid charHuman = new Character_Humanoid(armor, weapons);// Declare new humanoid
             cbArmor.Items.Clear();// Clear list before populating with data
+            cbArmor.SelectedIndex = -1;// Set selection to null
+            tbSummaryArmor.Text = "";// Clear summary
             for (int i = 0; i < armor.Count; i++)// Loop through armor list
             {
                 cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
             }
 
             cbWeapon.Items.Clear();// Clear list before populating with data
+            cbWeapon.SelectedIndex = -1;// Set selection to null
+            tbSummaryWeapon.Text = "";// Clear summary
             for (int i = 0; i < weapons.Count; i++)// Loop through armor list
             {
                 cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
             }
-
-            ///* Display current values in weapons list (comes from base character class) */
-            //for (int i = 0; i < weapons.Count; i++)
-            //{
-            //    MessageBox.Show("Configurator class HUMAN weapon: " + weapons[i].ToString());
-            //}
-
-            ///* Display current values in armor array (comes from base character class) */
-            //for (int i = 0; i < armor.Count; i++)
-            //{
-            //    MessageBox.Show("Configurator class HUMAN armor: " + armor[i].ToString());
-            //}
         }
 
-        private void btnCreateCreature_Click(object sender, EventArgs e)
+        private void rb_Creature_CheckedChanged(object sender, EventArgs e)
+        {                  
+            if (rb_Creature.Checked)
+            {
+                if (bRandomize)
+                {
+                    bRandomize = false;// Reset bool
+                    CreatureSelected();// Randomize chosen - Don't ask for confirmation
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        //...
+                        CreatureSelected();
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        //...
+                    }
+                    else
+                    {
+                        //...
+                    }
+                }
+            }                          
+        }
+
+        private void CreatureSelected()
         {
-            /* declare matching vars from BaseCharacter class */           
+            tbGearClass.Text = "Creature";
+            tbSummaryCharClass.Text = "Creature";
+
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
 
             Character_Creature charCreature = new Character_Creature(armor, weapons);// Declare new creature
-
-            /* Display current values in weapons list (comes from base character class) */
-            for (int i = 0; i < weapons.Count; i++)
+            cbArmor.Items.Clear();// Clear list before populating with data
+            cbArmor.SelectedIndex = -1;// Set selection to null
+            tbSummaryArmor.Text = "";// Clear summary
+            for (int i = 0; i < armor.Count; i++)// Loop through armor list
             {
-                MessageBox.Show("Configurator class CREATURE weapon: " + weapons[i].ToString());
+                cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
             }
 
-            for (int i = 0; i < armor.Count; i++)
+            cbWeapon.Items.Clear();// Clear list before populating with data
+            cbWeapon.SelectedIndex = -1;// Set selection to null
+            tbSummaryWeapon.Text = "";// Clear summary
+            for (int i = 0; i < weapons.Count; i++)// Loop through armor list
             {
-                MessageBox.Show("Configurator class CREATURE armor: " + armor[i].ToString());
+                cbWeapon.Items.Add(weapons[i].ToString());// Add selection to combobox
             }
         }
 
+        private void btnRandomizeChar_Click(object sender, EventArgs e)
+        {
+            bRandomize = true;
+            RandomizeCharacter();
+        }
+              
         private void cbArmor_SelectedIndexChanged(object sender, EventArgs e)
         {
             tbSummaryArmor.Text = cbArmor.SelectedItem.ToString();

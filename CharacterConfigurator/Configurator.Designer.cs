@@ -84,13 +84,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.tbSummaryStam = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_ArmorWeapon = new System.Windows.Forms.FlowLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.btnRandomizeChar = new System.Windows.Forms.Button();
-            this.btnCreateCreature = new System.Windows.Forms.Button();
-            this.btnCreateHuman = new System.Windows.Forms.Button();
             this.tbGearClass = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
@@ -106,6 +102,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tbSummaryArmor = new System.Windows.Forms.TextBox();
             this.tbSummaryWeapon = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_Bio.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flp_Stats.SuspendLayout();
@@ -128,6 +126,8 @@
             this.flowLayoutPanel13.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
             this.flowLayoutPanel15.SuspendLayout();
+            this.flowLayoutPanel16.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -148,7 +148,7 @@
             this.buttonSaveConfig.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonSaveConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSaveConfig.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonSaveConfig.Location = new System.Drawing.Point(531, 487);
+            this.buttonSaveConfig.Location = new System.Drawing.Point(773, 398);
             this.buttonSaveConfig.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonSaveConfig.Name = "buttonSaveConfig";
             this.buttonSaveConfig.Size = new System.Drawing.Size(122, 49);
@@ -160,10 +160,14 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(317, 500);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(2, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 13);
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(318, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "Save current character configuration to file";
             // 
@@ -195,7 +199,7 @@
             // 
             this.flp_Bio.AutoSize = true;
             this.flp_Bio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flp_Bio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_Bio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flp_Bio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flp_Bio.Controls.Add(this.label3);
             this.flp_Bio.Controls.Add(this.textBoxCharFirstName);
@@ -208,7 +212,7 @@
             this.flp_Bio.Controls.Add(this.label15);
             this.flp_Bio.Controls.Add(this.groupBox1);
             this.flp_Bio.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_Bio.Location = new System.Drawing.Point(100, 53);
+            this.flp_Bio.Location = new System.Drawing.Point(2, 2);
             this.flp_Bio.Margin = new System.Windows.Forms.Padding(2);
             this.flp_Bio.Name = "flp_Bio";
             this.flp_Bio.Size = new System.Drawing.Size(158, 281);
@@ -347,7 +351,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonBack.Location = new System.Drawing.Point(13, 487);
+            this.buttonBack.Location = new System.Drawing.Point(17, 405);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(122, 49);
@@ -361,7 +365,7 @@
             this.buttonExit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonExit.Location = new System.Drawing.Point(1043, 487);
+            this.buttonExit.Location = new System.Drawing.Point(909, 398);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(122, 49);
@@ -388,7 +392,7 @@
             // 
             this.flp_Stats.AutoSize = true;
             this.flp_Stats.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flp_Stats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_Stats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flp_Stats.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flp_Stats.Controls.Add(this.label4);
             this.flp_Stats.Controls.Add(this.label5);
@@ -398,10 +402,10 @@
             this.flp_Stats.Controls.Add(this.label7);
             this.flp_Stats.Controls.Add(this.flowLayoutPanel5);
             this.flp_Stats.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_Stats.Location = new System.Drawing.Point(262, 53);
+            this.flp_Stats.Location = new System.Drawing.Point(164, 2);
             this.flp_Stats.Margin = new System.Windows.Forms.Padding(2);
             this.flp_Stats.Name = "flp_Stats";
-            this.flp_Stats.Size = new System.Drawing.Size(206, 275);
+            this.flp_Stats.Size = new System.Drawing.Size(206, 280);
             this.flp_Stats.TabIndex = 7;
             this.flp_Stats.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Stats_Paint);
             // 
@@ -527,7 +531,8 @@
             this.flowLayoutPanel5.Location = new System.Drawing.Point(2, 220);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(198, 49);
+            this.flowLayoutPanel5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(198, 54);
             this.flowLayoutPanel5.TabIndex = 11;
             // 
             // trackBarStam
@@ -567,8 +572,8 @@
             // 
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label11.Location = new System.Drawing.Point(2, 2);
             this.label11.Margin = new System.Windows.Forms.Padding(2);
             this.label11.Name = "label11";
@@ -613,7 +618,7 @@
             this.flp_Summary.Controls.Add(this.flowLayoutPanel14);
             this.flp_Summary.Controls.Add(this.flowLayoutPanel15);
             this.flp_Summary.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_Summary.Location = new System.Drawing.Point(795, 53);
+            this.flp_Summary.Location = new System.Drawing.Point(747, 57);
             this.flp_Summary.Margin = new System.Windows.Forms.Padding(2);
             this.flp_Summary.Name = "flp_Summary";
             this.flp_Summary.Size = new System.Drawing.Size(310, 272);
@@ -828,48 +833,26 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(57, 10);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(135, 19);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(505, 34);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(107, 208);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 49);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Randomize";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.buttonRandomizeBio_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1043, 372);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(133, 65);
-            this.flowLayoutPanel2.TabIndex = 21;
-            // 
             // flp_ArmorWeapon
             // 
+            this.flp_ArmorWeapon.AutoSize = true;
             this.flp_ArmorWeapon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flp_ArmorWeapon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_ArmorWeapon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flp_ArmorWeapon.Controls.Add(this.label20);
             this.flp_ArmorWeapon.Controls.Add(this.flowLayoutPanel11);
             this.flp_ArmorWeapon.Controls.Add(this.flowLayoutPanel12);
             this.flp_ArmorWeapon.Controls.Add(this.flowLayoutPanel13);
             this.flp_ArmorWeapon.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_ArmorWeapon.Location = new System.Drawing.Point(486, 53);
+            this.flp_ArmorWeapon.Location = new System.Drawing.Point(374, 2);
             this.flp_ArmorWeapon.Margin = new System.Windows.Forms.Padding(2);
             this.flp_ArmorWeapon.Name = "flp_ArmorWeapon";
-            this.flp_ArmorWeapon.Size = new System.Drawing.Size(290, 336);
+            this.flp_ArmorWeapon.Size = new System.Drawing.Size(279, 124);
             this.flp_ArmorWeapon.TabIndex = 22;
             // 
             // label20
@@ -892,7 +875,7 @@
             this.btnRandomizeChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnRandomizeChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRandomizeChar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRandomizeChar.Location = new System.Drawing.Point(531, 417);
+            this.btnRandomizeChar.Location = new System.Drawing.Point(261, 350);
             this.btnRandomizeChar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnRandomizeChar.Name = "btnRandomizeChar";
             this.btnRandomizeChar.Size = new System.Drawing.Size(122, 49);
@@ -900,36 +883,6 @@
             this.btnRandomizeChar.Text = "Randomize";
             this.btnRandomizeChar.UseVisualStyleBackColor = false;
             this.btnRandomizeChar.Click += new System.EventHandler(this.btnRandomizeChar_Click);
-            // 
-            // btnCreateCreature
-            // 
-            this.btnCreateCreature.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateCreature.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCreateCreature.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateCreature.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCreateCreature.Location = new System.Drawing.Point(256, 360);
-            this.btnCreateCreature.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnCreateCreature.Name = "btnCreateCreature";
-            this.btnCreateCreature.Size = new System.Drawing.Size(138, 60);
-            this.btnCreateCreature.TabIndex = 23;
-            this.btnCreateCreature.Text = "Create Creature";
-            this.btnCreateCreature.UseVisualStyleBackColor = false;
-            this.btnCreateCreature.Click += new System.EventHandler(this.btnCreateCreature_Click);
-            // 
-            // btnCreateHuman
-            // 
-            this.btnCreateHuman.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateHuman.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCreateHuman.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateHuman.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCreateHuman.Location = new System.Drawing.Point(115, 360);
-            this.btnCreateHuman.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnCreateHuman.Name = "btnCreateHuman";
-            this.btnCreateHuman.Size = new System.Drawing.Size(134, 60);
-            this.btnCreateHuman.TabIndex = 24;
-            this.btnCreateHuman.Text = "Create Human";
-            this.btnCreateHuman.UseVisualStyleBackColor = false;
-            this.btnCreateHuman.Click += new System.EventHandler(this.btnCreateHuman_Click);
             // 
             // tbGearClass
             // 
@@ -1113,26 +1066,45 @@
             this.tbSummaryWeapon.Size = new System.Drawing.Size(202, 20);
             this.tbSummaryWeapon.TabIndex = 21;
             // 
+            // flowLayoutPanel16
+            // 
+            this.flowLayoutPanel16.AutoSize = true;
+            this.flowLayoutPanel16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel16.Controls.Add(this.flp_Bio);
+            this.flowLayoutPanel16.Controls.Add(this.flp_Stats);
+            this.flowLayoutPanel16.Controls.Add(this.flp_ArmorWeapon);
+            this.flowLayoutPanel16.Location = new System.Drawing.Point(57, 57);
+            this.flowLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel16.Name = "flowLayoutPanel16";
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(655, 285);
+            this.flowLayoutPanel16.TabIndex = 22;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel2.Controls.Add(this.label2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(441, 409);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(322, 30);
+            this.flowLayoutPanel2.TabIndex = 23;
+            // 
             // Configurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1185, 549);
-            this.Controls.Add(this.btnCreateHuman);
-            this.Controls.Add(this.btnCreateCreature);
-            this.Controls.Add(this.flp_ArmorWeapon);
+            this.ClientSize = new System.Drawing.Size(1096, 473);
             this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel16);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flp_Summary);
             this.Controls.Add(this.flowLayoutPanel6);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.flp_Stats);
             this.Controls.Add(this.buttonBack);
-            this.Controls.Add(this.flp_Bio);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRandomizeChar);
             this.Controls.Add(this.buttonSaveConfig);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1180,6 +1152,10 @@
             this.flowLayoutPanel14.PerformLayout();
             this.flowLayoutPanel15.ResumeLayout(false);
             this.flowLayoutPanel15.PerformLayout();
+            this.flowLayoutPanel16.ResumeLayout(false);
+            this.flowLayoutPanel16.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1222,14 +1198,12 @@
         private System.Windows.Forms.FlowLayoutPanel flp_Summary;
         private System.Windows.Forms.FlowLayoutPanel flp_Name;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbSummaryHomeTown;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tbSummaryCharClass;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rb_Creature;
@@ -1246,8 +1220,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox tbSummaryStam;
         private System.Windows.Forms.Button btnRandomizeChar;
-        private System.Windows.Forms.Button btnCreateCreature;
-        private System.Windows.Forms.Button btnCreateHuman;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.Label label21;
@@ -1264,5 +1236,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tbSummaryArmor;
         private System.Windows.Forms.TextBox tbSummaryWeapon;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel16;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
