@@ -31,21 +31,23 @@ namespace CharacterConfigurator
                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);// Center form on screen 
 
             /* Add text directly to combobox */
-            comboBoxHometown.Items.Add("Deep Glen");
-            comboBoxHometown.Items.Add("Rocky Nock");
-            comboBoxHometown.Items.Add("Hill Valley");
-            comboBoxHometown.Items.Add("Black Bend");
-            comboBoxHometown.Items.Add("Party City");
-            comboBoxHometown.Items.Add("Dooferville");
+            cbHometown.Items.Add("Deep Glen");
+            cbHometown.Items.Add("Rocky Nock");
+            cbHometown.Items.Add("Hill Valley");
+            cbHometown.Items.Add("Black Bend");
+            cbHometown.Items.Add("Party City");
+            cbHometown.Items.Add("Dooferville");
 
             /* Add combobox text via array index */
             string[] charClass = { "Mage", "Warrior", "Nun", "Ranger", "Barbarian", "Cleric" };
-            comboBoxCharClass.Items.Add(charClass[0]);
-            comboBoxCharClass.Items.Add(charClass[1]);
-            comboBoxCharClass.Items.Add(charClass[2]);
-            comboBoxCharClass.Items.Add(charClass[3]);
-            comboBoxCharClass.Items.Add(charClass[4]);
-            comboBoxCharClass.Items.Add(charClass[5]);         
+            cbCharClass.Items.Add(charClass[0]);
+            cbCharClass.Items.Add(charClass[1]);
+            cbCharClass.Items.Add(charClass[2]);
+            cbCharClass.Items.Add(charClass[3]);
+            cbCharClass.Items.Add(charClass[4]);
+            cbCharClass.Items.Add(charClass[5]);
+
+            tbCharFirstName.Select();// Put focus in first textbox
 
         }
 
@@ -56,20 +58,21 @@ namespace CharacterConfigurator
 
         private void buttonSaveConfig_Click(object sender, EventArgs e)
         {
-            if (textBoxCharFirstName.Text != "")// Has text?
+            if (tbCharFirstName.Text != "")// Has text?
             {
-                StreamWriter sWriter = new StreamWriter(textBoxCharFirstName.Text);// Init
+                // TODO: Delete all text in file and write new data (Add an if statement to warn user if character isn't completely filled out)
+                StreamWriter sWriter = new StreamWriter(tbCharFirstName.Text);// Init
                 string strPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);// Set save dir
                 strPath = strPath + "/Character Config.txt";// Set save file name
 
-                using (sWriter = File.AppendText(strPath)) sWriter.Write(textBoxCharFirstName.Text + Environment.NewLine);// Write text to file
+                using (sWriter = File.AppendText(strPath)) sWriter.Write(tbCharFirstName.Text + Environment.NewLine);// Write text to file
                  
                 sWriter.Close();// Close writer
-                MessageBox.Show("Name saved!", "Success", MessageBoxButtons.OK);// Notify user
+                MessageBox.Show("Character saved!", "Success", MessageBoxButtons.OK);// Notify user
             }
             else
             {
-                MessageBox.Show("Nothing to save. Please enter a character name.", "No data", MessageBoxButtons.OK);// Show error msg
+                MessageBox.Show("Nothing to save. Please create a character first.", "No data", MessageBoxButtons.OK);// Show error msg
             }           
         }
 
@@ -187,7 +190,8 @@ namespace CharacterConfigurator
             {
                 CheckOverage("Strength");
             }
-           statStrNum = statStr;// Assign new value to var
+            statStrNum = statStr;// Assign new value to var
+            tbSummaryStr.Text = statStrNum.ToString();// Set summary text
         }
 
         private void trackBarInt_Scroll(object sender, EventArgs e)
@@ -200,6 +204,7 @@ namespace CharacterConfigurator
                 CheckOverage("Intelligence");
             }
             statIntNum = statInt;// Assign new value to var
+            tbSummaryInt.Text = statIntNum.ToString();// Set summary text
         }
 
         private void trackBarStam_Scroll(object sender, EventArgs e)
@@ -212,6 +217,7 @@ namespace CharacterConfigurator
                 CheckOverage("Stamina");
             }
             statStamNum = statStam;// Assign new value to var
+            tbSummaryStam.Text = statStamNum.ToString();// Set summary text
         }
 
         private void CheckOverage(string stat)// Gets value over max of 20 points
@@ -286,15 +292,18 @@ namespace CharacterConfigurator
                 }
             }
 
-            /* Populate textboxes and assign slider values */
+            /* Populate textboxes and assign slider values and summary text */
             tbStatStr.Text = str.ToString();
             trackBarStrength.Value = str;
+            tbSummaryStr.Text = str.ToString();
 
             tbStatInt.Text = intel.ToString();
             trackBarInt.Value = intel;
+            tbSummaryInt.Text = intel.ToString();
 
             tbStatStam.Text = stam.ToString();
-            trackBarStam.Value = stam; 
+            trackBarStam.Value = stam;
+            tbSummaryStam.Text = stam.ToString();
         }
 
         private void buttonRandomizeBio_Click(object sender, EventArgs e)
@@ -319,16 +328,16 @@ namespace CharacterConfigurator
             tbSummaryCharName.Text = fullName;
 
             /* Populate Summary data */
-            textBoxCharFirstName.Text = firstName;
-            textBoxCharLastName.Text = lastName;
+            tbCharFirstName.Text = firstName;
+            tbCharLastName.Text = lastName;
 
-            int r3 = GetRandNum(0, comboBoxHometown.Items.Count - 1);
-            comboBoxHometown.SelectedIndex = r3;
-            tbSummaryHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
+            int r3 = GetRandNum(0, cbHometown.Items.Count - 1);
+            cbHometown.SelectedIndex = r3;
+            tbSummaryHomeTown.Text = cbHometown.SelectedItem.ToString();
 
-            int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
-            comboBoxCharClass.SelectedIndex = r4;
-            tbSummaryCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
+            int r4 = GetRandNum(0, cbCharClass.Items.Count - 1);
+            cbCharClass.SelectedIndex = r4;
+            tbSummaryCharClass.Text = cbCharClass.SelectedItem.ToString();
 
             tbSummaryStr.Text = tbStatStr.Text;
             tbSummaryInt.Text = tbStatInt.Text;
@@ -387,16 +396,16 @@ namespace CharacterConfigurator
             tbSummaryCharName.Text = fullName;
 
             /* Populate Summary data */
-            textBoxCharFirstName.Text = firstName;
-            textBoxCharLastName.Text = lastName;
+            tbCharFirstName.Text = firstName;
+            tbCharLastName.Text = lastName;
 
-            int r3 = GetRandNum(0, comboBoxHometown.Items.Count - 1);
-            comboBoxHometown.SelectedIndex = r3;
-            tbSummaryHomeTown.Text = comboBoxHometown.SelectedItem.ToString();
+            int r3 = GetRandNum(0, cbHometown.Items.Count - 1);
+            cbHometown.SelectedIndex = r3;
+            tbSummaryHomeTown.Text = cbHometown.SelectedItem.ToString();
 
-            int r4 = GetRandNum(0, comboBoxCharClass.Items.Count - 1);
-            comboBoxCharClass.SelectedIndex = r4;
-            tbSummaryCharClass.Text = comboBoxCharClass.SelectedItem.ToString();
+            int r4 = GetRandNum(0, cbCharClass.Items.Count - 1);
+            cbCharClass.SelectedIndex = r4;
+            tbSummaryCharClass.Text = cbCharClass.SelectedItem.ToString();
                      
             int r5 = GetRandNum(0, 100);// Get random number
             int r5a = r5 % 2;// Get remainder, checking for even/odd
@@ -572,7 +581,7 @@ namespace CharacterConfigurator
         private void HumanoidSelected()
         {
             tbGearClass.Text = "Humanoid";
-            tbSummaryCharClass.Text = "Humanoid";
+            tbSummaryCharRace.Text = "Humanoid";
 
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
@@ -627,7 +636,7 @@ namespace CharacterConfigurator
         private void CreatureSelected()
         {
             tbGearClass.Text = "Creature";
-            tbSummaryCharClass.Text = "Creature";
+            tbSummaryCharRace.Text = "Creature";
 
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
@@ -655,15 +664,35 @@ namespace CharacterConfigurator
             bRandomize = true;
             RandomizeCharacter();
         }
-              
+
         private void cbArmor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbSummaryArmor.Text = cbArmor.SelectedItem.ToString();
+            tbSummaryArmor.Text = cbArmor.SelectedItem.ToString();// Populate summary text
         }
 
         private void cbWeapon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbSummaryWeapon.Text = cbWeapon.SelectedItem.ToString();
+            tbSummaryWeapon.Text = cbWeapon.SelectedItem.ToString();// Populate summary text
+        }
+
+        private void tbCharFirstName_TextChanged(object sender, EventArgs e)
+        {
+            tbSummaryCharName.Text = tbCharFirstName.Text + " " + tbCharLastName.Text;// Populate summary text
+        }
+
+        private void tbCharLastName_TextChanged(object sender, EventArgs e)
+        {
+            tbSummaryCharName.Text = tbCharFirstName.Text + " " + tbCharLastName.Text;// Populate summary text
+        }
+
+        private void cbHometown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSummaryHomeTown.Text = cbHometown.SelectedItem.ToString();// Populate summary text
+        }
+
+        private void cbCharClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSummaryCharClass.Text = cbCharClass.SelectedItem.ToString();// Populate summary text
         }
     }
 }

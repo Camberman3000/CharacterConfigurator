@@ -10,9 +10,8 @@ Nov 20 - 4.5hr
 Nov 22 - 4hr
 Nov 26 - 1 hr
 Nov 27 3 hr
-Nov 28 3 hr
+Nov 28 5 hr - UI Cleanup (Tabindex, start focus, ensure summary text gets filled no matter how values are chosen)
 
-TODO: Connect all stat/bio controls to their associated summaries so they get updated when user makes a manual selection (not press rando btn)
 
 
  */
