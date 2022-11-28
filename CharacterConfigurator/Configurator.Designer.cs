@@ -148,7 +148,7 @@
             this.buttonSaveConfig.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonSaveConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSaveConfig.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonSaveConfig.Location = new System.Drawing.Point(1225, 623);
+            this.buttonSaveConfig.Location = new System.Drawing.Point(1140, 559);
             this.buttonSaveConfig.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.buttonSaveConfig.Name = "buttonSaveConfig";
             this.buttonSaveConfig.Size = new System.Drawing.Size(183, 75);
@@ -213,7 +213,7 @@
             this.flp_Bio.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_Bio.Location = new System.Drawing.Point(3, 3);
             this.flp_Bio.Name = "flp_Bio";
-            this.flp_Bio.Size = new System.Drawing.Size(230, 402);
+            this.flp_Bio.Size = new System.Drawing.Size(230, 410);
             this.flp_Bio.TabIndex = 6;
             this.flp_Bio.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Bio_Paint);
             // 
@@ -233,6 +233,7 @@
             // 
             // tbCharLastName
             // 
+            this.tbCharLastName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbCharLastName.Location = new System.Drawing.Point(3, 99);
             this.tbCharLastName.Name = "tbCharLastName";
             this.tbCharLastName.Size = new System.Drawing.Size(220, 26);
@@ -299,18 +300,20 @@
             this.label15.Location = new System.Drawing.Point(3, 263);
             this.label15.Margin = new System.Windows.Forms.Padding(3);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(220, 26);
+            this.label15.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.label15.Size = new System.Drawing.Size(220, 34);
             this.label15.TabIndex = 16;
-            this.label15.Text = "*Character Race";
+            this.label15.Text = "Character Race";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rb_Creature);
             this.groupBox1.Controls.Add(this.rb_Humanoid);
-            this.groupBox1.Location = new System.Drawing.Point(3, 295);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 303);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(220, 100);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -345,7 +348,7 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonBack.Location = new System.Drawing.Point(26, 623);
+            this.buttonBack.Location = new System.Drawing.Point(33, 559);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(183, 75);
@@ -359,7 +362,7 @@
             this.buttonExit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonExit.Location = new System.Drawing.Point(1429, 623);
+            this.buttonExit.Location = new System.Drawing.Point(1344, 559);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(183, 75);
@@ -546,7 +549,7 @@
             this.flowLayoutPanel6.AutoSize = true;
             this.flowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(1314, 115);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(1258, 117);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel6.TabIndex = 12;
@@ -600,9 +603,9 @@
             this.flp_Summary.Controls.Add(this.flowLayoutPanel14);
             this.flp_Summary.Controls.Add(this.flowLayoutPanel15);
             this.flp_Summary.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_Summary.Location = new System.Drawing.Point(1120, 88);
+            this.flp_Summary.Location = new System.Drawing.Point(1064, 90);
             this.flp_Summary.Name = "flp_Summary";
-            this.flp_Summary.Size = new System.Drawing.Size(463, 416);
+            this.flp_Summary.Size = new System.Drawing.Size(463, 429);
             this.flp_Summary.TabIndex = 19;
             this.flp_Summary.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Summary_Paint);
             // 
@@ -627,7 +630,7 @@
             this.flowLayoutPanel7.Controls.Add(this.tbSummaryHomeTown);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 73);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(413, 32);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(416, 32);
             this.flowLayoutPanel7.TabIndex = 22;
             // 
             // label13
@@ -648,7 +651,7 @@
             this.tbSummaryHomeTown.Location = new System.Drawing.Point(126, 3);
             this.tbSummaryHomeTown.Name = "tbSummaryHomeTown";
             this.tbSummaryHomeTown.ReadOnly = true;
-            this.tbSummaryHomeTown.Size = new System.Drawing.Size(284, 26);
+            this.tbSummaryHomeTown.Size = new System.Drawing.Size(287, 26);
             this.tbSummaryHomeTown.TabIndex = 19;
             // 
             // flowLayoutPanel8
@@ -660,7 +663,7 @@
             this.flowLayoutPanel8.Controls.Add(this.tbSummaryCharClass);
             this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 111);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(414, 32);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(416, 32);
             this.flowLayoutPanel8.TabIndex = 23;
             // 
             // label14
@@ -681,7 +684,7 @@
             this.tbSummaryCharClass.Location = new System.Drawing.Point(177, 3);
             this.tbSummaryCharClass.Name = "tbSummaryCharClass";
             this.tbSummaryCharClass.ReadOnly = true;
-            this.tbSummaryCharClass.Size = new System.Drawing.Size(234, 26);
+            this.tbSummaryCharClass.Size = new System.Drawing.Size(236, 26);
             this.tbSummaryCharClass.TabIndex = 19;
             // 
             // flowLayoutPanel9
@@ -693,7 +696,7 @@
             this.flowLayoutPanel9.Controls.Add(this.tbSummaryCharRace);
             this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 149);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(414, 32);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(416, 32);
             this.flowLayoutPanel9.TabIndex = 24;
             // 
             // label16
@@ -714,7 +717,7 @@
             this.tbSummaryCharRace.Location = new System.Drawing.Point(173, 3);
             this.tbSummaryCharRace.Name = "tbSummaryCharRace";
             this.tbSummaryCharRace.ReadOnly = true;
-            this.tbSummaryCharRace.Size = new System.Drawing.Size(238, 26);
+            this.tbSummaryCharRace.Size = new System.Drawing.Size(240, 26);
             this.tbSummaryCharRace.TabIndex = 19;
             // 
             // flowLayoutPanel10
@@ -806,7 +809,7 @@
             this.flowLayoutPanel14.Controls.Add(this.tbSummaryArmor);
             this.flowLayoutPanel14.Location = new System.Drawing.Point(3, 225);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(418, 42);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(415, 42);
             this.flowLayoutPanel14.TabIndex = 26;
             // 
             // label24
@@ -828,7 +831,7 @@
             this.tbSummaryArmor.Location = new System.Drawing.Point(115, 3);
             this.tbSummaryArmor.Name = "tbSummaryArmor";
             this.tbSummaryArmor.ReadOnly = true;
-            this.tbSummaryArmor.Size = new System.Drawing.Size(300, 26);
+            this.tbSummaryArmor.Size = new System.Drawing.Size(297, 26);
             this.tbSummaryArmor.TabIndex = 20;
             // 
             // flowLayoutPanel15
@@ -840,7 +843,7 @@
             this.flowLayoutPanel15.Controls.Add(this.tbSummaryWeapon);
             this.flowLayoutPanel15.Location = new System.Drawing.Point(3, 273);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(416, 42);
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(413, 42);
             this.flowLayoutPanel15.TabIndex = 27;
             // 
             // label25
@@ -862,7 +865,7 @@
             this.tbSummaryWeapon.Location = new System.Drawing.Point(112, 3);
             this.tbSummaryWeapon.Name = "tbSummaryWeapon";
             this.tbSummaryWeapon.ReadOnly = true;
-            this.tbSummaryWeapon.Size = new System.Drawing.Size(301, 26);
+            this.tbSummaryWeapon.Size = new System.Drawing.Size(298, 26);
             this.tbSummaryWeapon.TabIndex = 21;
             // 
             // flowLayoutPanel1
@@ -871,7 +874,7 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(202, 29);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(146, 31);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(764, 48);
             this.flowLayoutPanel1.TabIndex = 20;
@@ -881,6 +884,7 @@
             this.flp_ArmorWeapon.AutoSize = true;
             this.flp_ArmorWeapon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flp_ArmorWeapon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flp_ArmorWeapon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flp_ArmorWeapon.Controls.Add(this.label20);
             this.flp_ArmorWeapon.Controls.Add(this.flowLayoutPanel11);
             this.flp_ArmorWeapon.Controls.Add(this.flowLayoutPanel12);
@@ -888,7 +892,7 @@
             this.flp_ArmorWeapon.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_ArmorWeapon.Location = new System.Drawing.Point(549, 3);
             this.flp_ArmorWeapon.Name = "flp_ArmorWeapon";
-            this.flp_ArmorWeapon.Size = new System.Drawing.Size(414, 186);
+            this.flp_ArmorWeapon.Size = new System.Drawing.Size(418, 190);
             this.flp_ArmorWeapon.TabIndex = 22;
             // 
             // label20
@@ -1019,7 +1023,7 @@
             this.btnRandomizeChar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnRandomizeChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRandomizeChar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRandomizeChar.Location = new System.Drawing.Point(229, 623);
+            this.btnRandomizeChar.Location = new System.Drawing.Point(236, 559);
             this.btnRandomizeChar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.btnRandomizeChar.Name = "btnRandomizeChar";
             this.btnRandomizeChar.Size = new System.Drawing.Size(183, 75);
@@ -1036,9 +1040,9 @@
             this.flowLayoutPanel16.Controls.Add(this.flp_Bio);
             this.flowLayoutPanel16.Controls.Add(this.flp_Stats);
             this.flowLayoutPanel16.Controls.Add(this.flp_ArmorWeapon);
-            this.flowLayoutPanel16.Location = new System.Drawing.Point(86, 88);
+            this.flowLayoutPanel16.Location = new System.Drawing.Point(30, 90);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(966, 429);
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(970, 429);
             this.flowLayoutPanel16.TabIndex = 22;
             // 
             // flowLayoutPanel2
@@ -1046,11 +1050,12 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(729, 638);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(644, 574);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(482, 45);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(486, 49);
             this.flowLayoutPanel2.TabIndex = 23;
             // 
             // Configurator
@@ -1059,7 +1064,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1644, 728);
+            this.ClientSize = new System.Drawing.Size(1565, 654);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel16);
             this.Controls.Add(this.flowLayoutPanel1);

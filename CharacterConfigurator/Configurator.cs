@@ -13,10 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace CharacterConfigurator
 {
     public partial class Configurator : Form
-    {
-        bool bRandomize = false;
-
-
+    {       
         private Form1 form1;// Declare Form1        
 
         public Configurator(Form1 form1)// Pass in Form1
@@ -551,30 +548,8 @@ namespace CharacterConfigurator
         private void rb_Humanoid_CheckedChanged(object sender, EventArgs e)
         {            
             if (rb_Humanoid.Checked)// User checked Humanoid rb?
-            {
-                if (bRandomize)
-                {
-                    bRandomize = false;// Reset bool
-                    HumanoidSelected();// Randomize chosen - Don't ask for confirmation
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        //...
-                        HumanoidSelected();
-                    }
-                    else if (result == DialogResult.No)
-                    {
-                        //...
-                    }
-                    else
-                    {
-                        //...
-                    }
-                }
-               
+            {                
+                HumanoidSelected();// Randomize chosen - Don't ask for confirmation              
             }                         
         }        
 
@@ -607,29 +582,8 @@ namespace CharacterConfigurator
         private void rb_Creature_CheckedChanged(object sender, EventArgs e)
         {                  
             if (rb_Creature.Checked)
-            {
-                if (bRandomize)
-                {
-                    bRandomize = false;// Reset bool
-                    CreatureSelected();// Randomize chosen - Don't ask for confirmation
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Do you want to change classes? Some selections may be lost", "Confirmation", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        //...
-                        CreatureSelected();
-                    }
-                    else if (result == DialogResult.No)
-                    {
-                        //...
-                    }
-                    else
-                    {
-                        //...
-                    }
-                }
+            {                   
+                CreatureSelected();// Randomize chosen - Don't ask for confirmation                
             }                          
         }
 
@@ -660,8 +614,7 @@ namespace CharacterConfigurator
         }
 
         private void btnRandomizeChar_Click(object sender, EventArgs e)
-        {
-            bRandomize = true;
+        {             
             RandomizeCharacter();
         }
 
