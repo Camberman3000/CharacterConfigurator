@@ -10,7 +10,7 @@ Nov 20 - 4.5hr
 Nov 22 - 4hr
 Nov 26 - 1 hr
 Nov 27 3 hr
-Nov 28 5 hr - UI Cleanup (Tabindex, start focus, ensure summary text gets filled no matter how values are chosen)
+Nov 28 5 hr - UI Cleanup; Tabindex; 1st textbox focus on program start; Ensure summary text gets filled no matter how values are chosen
 
 
 
@@ -57,12 +57,7 @@ namespace CharacterConfigurator
             configuratorForm.Show();// Show configurator form
             this.Hide();// Hide this form
         }
-
-        private void buttonOptions_Click(object sender, EventArgs e)
-        {
-
-        }
-
+         
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();// Exit the program

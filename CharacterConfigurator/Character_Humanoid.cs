@@ -12,23 +12,12 @@ namespace CharacterConfigurator
         // Armor and Weapon types go here. This data will be used to populate combobox lists of available armor & weapons
         public Character_Humanoid(List<string> armor, List<string> weapons) : base(armor, weapons)
         {
-            /* Human-Specific gear - Added to base class items */
+            /* Human-Specific gear */
             armor.Add("Chain Mail");
             armor.Add("Plate Mail");
 
             weapons.Add("Club");
-            weapons.Add("Mace");
-
-
-            //for (int i = 0; i < weapons.Count; i++)
-            //{
-            //    MessageBox.Show("HUMANOID CLASS weapons: " + weapons[i].ToString());
-            //}
-
-            //for (int i = 0; i < armor.Count; i++)
-            //{
-            //    MessageBox.Show("HUMANOID CLASS armor: " + armor[i].ToString());
-            //}
+            weapons.Add("Mace");           
         }
     }
 }

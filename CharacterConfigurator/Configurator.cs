@@ -45,7 +45,6 @@ namespace CharacterConfigurator
             cbCharClass.Items.Add(charClass[5]);
 
             tbCharFirstName.Select();// Put focus in first textbox
-
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -86,13 +85,13 @@ namespace CharacterConfigurator
 
         private void buttonRandStats_Click(object sender, EventArgs e)
         {
-            /* Get random number between 10-20 */
+            /* Get random number between 10-20 for str/int/stam stats */
             int randNum1 = GetRandNum(10, 20);
             int randNum2 = GetRandNum(10, 20);
             int randNum3 = GetRandNum(10, 20);
 
             int subTotal =  randNum1 + randNum2 + randNum3;// Subtotal of all randomly generated numbers
-            int overage = 0;// Var
+            int overage = 0;// amt over 20
 
             if (subTotal > 20)// Random value total is over 20?
             {
@@ -102,11 +101,12 @@ namespace CharacterConfigurator
             int trimAmt = overage / 3;// How much to trim from each random number
             int remainder = overage % 3;// Remainder after division
 
-            /* Subtract trimAmt from each random number */
+            /* Subtract trimAmt from each stat number */
             randNum1 -= trimAmt;
             randNum2 -= trimAmt;
             randNum3 -= trimAmt;
 
+            /* Check for any remainder after trimming from all 3 stat values */
             if (remainder > 0)// Could be between 0-2
             {
                 int statToAdjust = GetRandNum(1, 3);// Get random number between 1 and 3
@@ -130,8 +130,8 @@ namespace CharacterConfigurator
                 }
             }
 
-            /* Display random stat results */
-            if (randNum1 > 10)
+            /* Catch out of range & Display the random stat results */
+            if (randNum1 > 10)// Str
             {
                 tbStatStr.Text = "10";
                 trackBarStrength.Value = 10;
@@ -141,9 +141,8 @@ namespace CharacterConfigurator
                 tbStatStr.Text = randNum1.ToString();
                 trackBarStrength.Value = randNum1;
             }
-
-            /* Catch out of range */
-            if (randNum2 > 10)
+            
+            if (randNum2 > 10)// Int
             {
                 tbStatInt.Text = "10";
                 trackBarInt.Value = 10;
@@ -154,7 +153,7 @@ namespace CharacterConfigurator
                 trackBarInt.Value = randNum2;
             }
 
-            if (randNum3 > 10)
+            if (randNum3 > 10)// Stam
             {
                 tbStatStam.Text = "10";
                 trackBarStam.Value = 10;
@@ -174,14 +173,15 @@ namespace CharacterConfigurator
             return randNum;// Return int
         }
 
+        /* values parsed to int */
         int statStrNum = 0;
         int statIntNum = 0;
         int statStamNum = 0;
 
         private void trackBarStrength_Scroll(object sender, EventArgs e)
         {
-            tbStatStr.Text = trackBarStrength.Value.ToString();
-            int statStr = Int32.Parse(trackBarStrength.Value.ToString());
+            tbStatStr.Text = trackBarStrength.Value.ToString();// Populate stat textbox
+            int statStr = Int32.Parse(trackBarStrength.Value.ToString());// Parse to int - no TryParse needed since it doesn't rely on user input
 
             if (statStr > statStrNum)// Did value increase?
             {
@@ -217,7 +217,7 @@ namespace CharacterConfigurator
             tbSummaryStam.Text = statStamNum.ToString();// Set summary text
         }
 
-        private void CheckOverage(string stat)// Gets value over max of 20 points
+        private void CheckOverage(string stat)// Gets value over the stat max of 20 points
         {
             int subTotal = 0;
             int str = Int32.Parse(tbStatStr.Text);
@@ -236,12 +236,12 @@ namespace CharacterConfigurator
 
                 switch (stat)
                 {
-                    case "Strength":
+                    case "Strength":// Will trim any overage from Int & Stam
                         intel -= trimAmt;// Trims overage / 2
                         stam -= trimAmt;// Trims overage / 2 
                         if (remainder > 0)
                         {
-                            int randNum = GetRandNum(0, 100);// Get random number
+                            int randNum = GetRandNum(0, 100);// Get random number - Using 0-100 instead of 0-1 to get greater range of possible results
                             if (randNum > 50)// Random num > 50?
                             {
                                 intel -= remainder;// Set trimmed value
@@ -252,7 +252,7 @@ namespace CharacterConfigurator
                             }                            
                         }                   
                         break;
-                    case "Intelligence":
+                    case "Intelligence":// Will trim any overage from Str & Stam
                         str -= trimAmt;// Trims overage / 2
                         stam -= trimAmt;// Trims overage / 2 
                         if (remainder > 0)// Random num > 50?
@@ -268,7 +268,7 @@ namespace CharacterConfigurator
                             }                            
                         }
                         break;
-                    case "Stamina":
+                    case "Stamina":// Will trim any overage from Str & Int
                         str -= trimAmt;// Trims overage / 2
                         intel -= trimAmt;// Trims overage / 2 
                         if (remainder > 0)// Random num > 50?
@@ -289,7 +289,7 @@ namespace CharacterConfigurator
                 }
             }
 
-            /* Populate textboxes and assign slider values and summary text */
+            /* Populate textboxes, assign slider values and summary text */
             tbStatStr.Text = str.ToString();
             trackBarStrength.Value = str;
             tbSummaryStr.Text = str.ToString();
@@ -301,65 +301,6 @@ namespace CharacterConfigurator
             tbStatStam.Text = stam.ToString();
             trackBarStam.Value = stam;
             tbSummaryStam.Text = stam.ToString();
-        }
-
-        private void buttonRandomizeBio_Click(object sender, EventArgs e)
-        {
-            /* Name arrays */
-            string[] firstNameArr = { "Alexia", "Lauren ", "Esme ", "Saylah ", "Oran ", "Mahle ", "Wiseco ", "Milodon " };
-            string[] lastNameArr = { "Beasley ", "Beard", "Sanford", "Tang", "Slade", "Baker", "Smith" };
-
-            string firstName;
-            string lastName;
-            
-            /* Get random number */
-            int r1 = GetRandNum(0, firstNameArr.Length);
-            int r2 = GetRandNum(0, lastNameArr.Length);
-
-            /* Assign random number to array index */
-            firstName = firstNameArr[r1];
-            lastName = lastNameArr[r2]; 
-
-            /* Populate text */
-            string fullName = firstName + " " + lastName;// Concat
-            tbSummaryCharName.Text = fullName;
-
-            /* Populate Summary data */
-            tbCharFirstName.Text = firstName;
-            tbCharLastName.Text = lastName;
-
-            int r3 = GetRandNum(0, cbHometown.Items.Count - 1);
-            cbHometown.SelectedIndex = r3;
-            tbSummaryHomeTown.Text = cbHometown.SelectedItem.ToString();
-
-            int r4 = GetRandNum(0, cbCharClass.Items.Count - 1);
-            cbCharClass.SelectedIndex = r4;
-            tbSummaryCharClass.Text = cbCharClass.SelectedItem.ToString();
-
-            tbSummaryStr.Text = tbStatStr.Text;
-            tbSummaryInt.Text = tbStatInt.Text;
-            tbSummaryStam.Text = tbStatStam.Text;
-
-            int r5 = GetRandNum(0, 100);
-            int r5a = r5 % 2;
-
-            if (r5a == 0)
-            {
-                rb_Humanoid.Checked = true;
-            }
-            else
-            {
-                rb_Creature.Checked = true;
-            }
-
-            if (rb_Humanoid.Checked)
-            {
-                tbSummaryCharRace.Text = "Humanoid";
-            }
-            else if (rb_Creature.Checked)
-            {
-                tbSummaryCharRace.Text = "Creature";
-            }
         }
 
         private void RandomizeCharacter()
@@ -396,10 +337,12 @@ namespace CharacterConfigurator
             tbCharFirstName.Text = firstName;
             tbCharLastName.Text = lastName;
 
+            /* Get random Hometown */
             int r3 = GetRandNum(0, cbHometown.Items.Count - 1);
             cbHometown.SelectedIndex = r3;
             tbSummaryHomeTown.Text = cbHometown.SelectedItem.ToString();
 
+            /* Get random Character class */
             int r4 = GetRandNum(0, cbCharClass.Items.Count - 1);
             cbCharClass.SelectedIndex = r4;
             tbSummaryCharClass.Text = cbCharClass.SelectedItem.ToString();
@@ -407,6 +350,7 @@ namespace CharacterConfigurator
             int r5 = GetRandNum(0, 100);// Get random number
             int r5a = r5 % 2;// Get remainder, checking for even/odd
 
+            /* Check rad btn and populate summary text */
             if (r5a == 0)// Is even?
             {
                 rb_Humanoid.Checked = true;
@@ -416,16 +360,7 @@ namespace CharacterConfigurator
             {
                 rb_Creature.Checked = true;
                 tbSummaryCharRace.Text = "Creature";
-            }
-
-            //if (rb_Humanoid.Checked)
-            //{
-            //    tbSummaryCharRace.Text = "Humanoid";
-            //}
-            //else if (rb_Creature.Checked)
-            //{
-            //    tbSummaryCharRace.Text = "Creature";
-            //}
+            } 
         }
 
         private void GetRandomStats()
@@ -558,10 +493,10 @@ namespace CharacterConfigurator
             tbGearClass.Text = "Humanoid";
             tbSummaryCharRace.Text = "Humanoid";
 
-            List<string> armor = new List<string>();
-            List<string> weapons = new List<string>();// New empty list   
+            List<string> armor = new List<string>();// New empty armor list 
+            List<string> weapons = new List<string>();// New empty weapons list   
 
-            Character_Humanoid charHuman = new Character_Humanoid(armor, weapons);// Declare new humanoid
+            Character_Humanoid charHuman = new Character_Humanoid(armor, weapons);// Declare new humanoid, pulling any armor/weapon data from the Character_Humanoid (& BaseCharacter) class
             cbArmor.Items.Clear();// Clear list before populating with data
             cbArmor.SelectedIndex = -1;// Set selection to null
             tbSummaryArmor.Text = "";// Clear summary
@@ -570,7 +505,7 @@ namespace CharacterConfigurator
                 cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
             }
 
-            cbWeapon.Items.Clear();// Clear list before populating with data
+            cbWeapon.Items.Clear();// Clear combobox before populating with data
             cbWeapon.SelectedIndex = -1;// Set selection to null
             tbSummaryWeapon.Text = "";// Clear summary
             for (int i = 0; i < weapons.Count; i++)// Loop through armor list
@@ -595,7 +530,7 @@ namespace CharacterConfigurator
             List<string> armor = new List<string>();
             List<string> weapons = new List<string>();// New empty list   
 
-            Character_Creature charCreature = new Character_Creature(armor, weapons);// Declare new creature
+            Character_Creature charCreature = new Character_Creature(armor, weapons);// Declare new creature, pulling any armor/weapon data from the Character_Creature (& BaseCharacter) class
             cbArmor.Items.Clear();// Clear list before populating with data
             cbArmor.SelectedIndex = -1;// Set selection to null
             tbSummaryArmor.Text = "";// Clear summary
@@ -604,7 +539,7 @@ namespace CharacterConfigurator
                 cbArmor.Items.Add(armor[i].ToString());// Add selection to combobox
             }
 
-            cbWeapon.Items.Clear();// Clear list before populating with data
+            cbWeapon.Items.Clear();// Clear combobox before populating with data
             cbWeapon.SelectedIndex = -1;// Set selection to null
             tbSummaryWeapon.Text = "";// Clear summary
             for (int i = 0; i < weapons.Count; i++)// Loop through armor list
