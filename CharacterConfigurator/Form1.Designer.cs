@@ -108,9 +108,9 @@
             this.label2.Location = new System.Drawing.Point(8, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(824, 32);
+            this.label2.Size = new System.Drawing.Size(561, 32);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Welcome to the RPG character configurator. Press Start to begin";
+            this.label2.Text = "Welcome to the RPG character configurator";
             // 
             // flowLayoutPanel2
             // 
@@ -119,9 +119,9 @@
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(73, 57);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(217, 54);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(844, 52);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(581, 52);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // Form1

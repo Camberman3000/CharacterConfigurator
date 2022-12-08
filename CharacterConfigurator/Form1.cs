@@ -11,8 +11,15 @@ Nov 22 - 4hr
 Nov 26 - 1 hr
 Nov 27 3 hr
 Nov 28 5 hr - UI Cleanup; Tabindex; 1st textbox focus on program start; Ensure summary text gets filled no matter how values are chosen
+Nov 29 - 2 hr - Commenting and clarifying functionality; Removed unused code
+Dec 8 - 1 hr
 
 
+TODO: ( Responding to Live session critique)
+1. Fix window size to show the background more effectively - Complete
+2. Change transparency in control panels - too dark - Complete
+3. Remove redundant intro text - Complete
+4. Change "Start" to Login/Create and pass that data to configurator form
 
  */
 
