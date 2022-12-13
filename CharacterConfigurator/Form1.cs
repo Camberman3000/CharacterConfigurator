@@ -13,13 +13,15 @@ Nov 27 3 hr
 Nov 28 5 hr - UI Cleanup; Tabindex; 1st textbox focus on program start; Ensure summary text gets filled no matter how values are chosen
 Nov 29 - 2 hr - Commenting and clarifying functionality; Removed unused code
 Dec 8 - 1 hr
+Dec 13 - 2 hours - Implement suggested changes from live session
 
-
-TODO: ( Responding to Live session critique)
+Items from Live session critique
 1. Fix window size to show the background more effectively - Complete
 2. Change transparency in control panels - too dark - Complete
 3. Remove redundant intro text - Complete
-4. Change "Start" to Login/Create and pass that data to configurator form
+4. Change "Start" to Login/Create and pass that data to configurator form - Complete
+
+Total hours spent - 29.25
 
  */
 
@@ -38,6 +40,8 @@ namespace CharacterConfigurator
     public partial class Form1 : Form
     {
         private Configurator configuratorForm;// Declare configurator form
+        public string UserName = "";
+        public string Password = "";
 
         public Form1()
         {
@@ -50,24 +54,27 @@ namespace CharacterConfigurator
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);// Center form on screen          
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();// Exit the program
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             if (configuratorForm != null)
             {
-               // Don't create, it already exists
+                // Don't create, it already exists
             }
             else
-            {
+            {                 
+                UserName= tbUserName.Text;// Save UN
+                Password= tbPassword.Text;// Save PW
+
                 configuratorForm = new Configurator(this);// Create new configurator form
             }
-           
+
             configuratorForm.Show();// Show configurator form
             this.Hide();// Hide this form
-        }
-         
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            this.Close();// Exit the program
         }
     }
 }

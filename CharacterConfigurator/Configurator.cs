@@ -45,6 +45,8 @@ namespace CharacterConfigurator
             cbCharClass.Items.Add(charClass[5]);
 
             tbCharFirstName.Select();// Put focus in first textbox
+            tbUserName.Text = form1.UserName;// Populate username from Login Page          
+            
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
