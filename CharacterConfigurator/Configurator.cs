@@ -63,7 +63,16 @@ namespace CharacterConfigurator
                 string strPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);// Set save dir
                 strPath = strPath + "/Character Config.txt";// Set save file name
 
-                using (sWriter = File.AppendText(strPath)) sWriter.Write(tbCharFirstName.Text + Environment.NewLine);// Write text to file
+                //using (sWriter = File.AppendText(strPath)) sWriter.Write(tbCharFirstName.Text + Environment.NewLine);// Write text to file
+                using (sWriter = File.CreateText(strPath)) sWriter.Write("User: " + tbUserName.Text + Environment.NewLine
+                   + "Character Name: " + tbSummaryCharName.Text + Environment.NewLine
+                   + "Hometown: " + tbSummaryHomeTown.Text + Environment.NewLine
+                   + "Class: " + tbSummaryCharClass.Text + Environment.NewLine
+                   + "Race: " + tbSummaryCharRace.Text + Environment.NewLine
+                   + "Strength: " + tbSummaryStr.Text + " Int: " + tbSummaryInt.Text + " Stamina: " + tbSummaryStam.Text + Environment.NewLine
+                   + "Armor: " + tbSummaryArmor.Text + Environment.NewLine
+                   + "Weapon: " + tbSummaryWeapon.Text + Environment.NewLine);// Write text to file
+                
                  
                 sWriter.Close();// Close writer
                 MessageBox.Show("Character saved!", "Success", MessageBoxButtons.OK);// Notify user
